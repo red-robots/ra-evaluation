@@ -1,0 +1,168 @@
+// iterate throught the left side
+$class-slug-left: left !default
+
+@for $l from 1 through 37 {
+  .#{$class-slug-left}-#{$l} {
+  	position: absolute;
+  	border-radius: 50%;
+  }
+}
+// iterate throught the left side
+/*   
+
+
+		left Arm  
+
+
+*/
+.left-1 {
+	top: 10%;
+	left: 43%;
+}
+.left-2 {
+	top: 17%;
+	left: 45%;
+}
+.left-3 {
+	top: 15%;
+	left: 40%;
+}
+.left-4 {
+	top: 16%;
+	left: 34%;
+}
+.left-5 {
+	top: 30%;
+	left: 32%;
+}
+.left-6 {
+	top: 41%;
+	left: 28%;
+}
+.left-7 {
+	top: 45%;
+	left: 32%;
+}
+.left-8 {
+	top: 45%;
+	left: 19%;
+}
+.left-9 {
+	top: 48%;
+	left: 21%;
+}
+.left-10 {
+	top: 50%;
+	left: 24%;
+}
+.left-11 {
+	top: 52%;
+	left: 27.5%;
+}
+.left-12 {
+	top: 53%;
+	left: 31.5%;
+}
+.left-13 {
+	top: 48%;
+	left: 13%;
+}
+.left-14 {
+	top: 52%;
+	left: 15%;
+}
+.left-15 {
+	top: 54.5%;
+	left: 18.8%;
+}
+.left-16 {
+	top: 56.2%;
+	left: 24%;
+}
+.left-17 {
+	top: 59%;
+	left: 29.5%;
+}
+.left-18 {
+	top: 51.5%;
+	left: 8%;
+}
+.left-19 {
+	top: 55.5%;
+	left: 10%;
+}
+.left-20 {
+	top: 58%;
+	left: 15%;
+}
+.left-21 {
+	top: 61%;
+	left: 20%;
+}
+/*   
+
+
+		left Leg   
+
+
+*/
+.left-22 {
+	top: 43%;
+	left: 40%;
+}
+.left-23 {
+	top: 61%;
+	left: 38%;
+}
+.left-24 {
+	bottom: 21.5%;
+	left: 38.5%;
+}
+.left-25 {
+	bottom: 18%;
+	left: 42%;
+}
+.left-26 {
+	bottom: 17%;
+	left: 32%;
+}
+.left-27 {
+	bottom: 11%;
+	left: 18%;
+}
+.left-28 {
+	bottom: 10%;
+	left: 22.5%;
+}
+.left-29 {
+	bottom: 9%;
+	left: 27%;
+}
+.left-30 {
+	bottom: 8%;
+	left: 31.5%;
+}
+.left-31 {
+	bottom: 8%;
+	left: 36%;
+}
+.left-32 {
+	bottom: 8%;
+	left: 15.5%;
+}
+.left-33 {
+	bottom: 7%;
+	left: 21.5%;
+}
+.left-34 {
+	bottom: 6%;
+	left: 26%;
+}
+.left-35 {
+	bottom: 4.7%;
+	left: 30.7%;
+}
+.left-36 {
+	bottom: 4.7%;
+	left: 36%;
+}

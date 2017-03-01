@@ -1,0 +1,56 @@
+.skeleton {
+	width: 1000px;
+	height: 1463px;
+	position: relative;
+	background: {
+		image: url(../images/skeleton.png);
+		size: cover;
+	}
+	@media screen and (min-width: $tabwidth) {
+		width: 550px;
+		height: 805px;
+	}
+	@media screen and (min-width: $midwidth) {
+		width: 850px;
+		height: 1244px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 1000px;
+		height: 1463px;
+	}
+}
+.inactive {
+	background-color: #ccc;
+	@include transition(all ease .2s);
+}
+.active {
+	background-color: #f00;
+}
+.dot-small {
+	width: 4em;
+    height: 4em;
+}
+.dot-med {
+	width: 5em;
+    height: 5em;
+}
+.dot-large {
+	width: 6em;
+    height: 6em;
+}
+.dot-small, .dot-med, .dot-large {
+	transform: scale(.9);
+	@include transition(all ease .2s);
+	&:hover {
+		transform: scale(1);
+	}
+}
+.middle-1 {
+	position: absolute;
+  	border-radius: 50%;
+  	left: 47.3%;
+  	top: 14%;
+}
+
+@import "body-left";
+@import "body-right";
