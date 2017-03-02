@@ -67,9 +67,7 @@ add_action( 'admin_menu', 'raeval_admin_menu' );
 * 	Possible options page
 *
 */
-function raeval_options_page_html() {
-	$pluginUrl = plugin_dir_url( __FILE__ );
-	require_once( $pluginUrl . 'inc/options.php' );
-	echo 'what?';
 
+function raeval_options_page_html() {
+	require_once( plugin_dir_path(__FILE__).'options.php' );
 }
