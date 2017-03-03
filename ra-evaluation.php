@@ -11,50 +11,30 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: raeval
 Domain Path: /languages
 */
-
-
-/*
-*
-* 	Register Styles
-*
-*/
-function raeval_admin_styles() {
-
-	wp_enqueue_style( 'jquery-ui-datepicker-style' , '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
-	wp_enqueue_style( 'egg-style' , plugin_dir_url( __FILE__ ) . 'css/style.css' );
-
+if ( !function_exists( 'add_action' ) ) {
+	echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
+	exit;
 }
-add_action('admin_print_styles', 'raeval_admin_styles');
 
-/*
-*
-* 	Register Scripts
-*
-*/
-function raeval_admin_scripts() {
+define( 'RAEVAL__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+require_once RAEVAL__PLUGIN_DIR."admin/class.admin.php";
+require_once RAEVAL__PLUGIN_DIR."formProcessor/class.formProcessor.php";
+require_once RAEVAL__PLUGIN_DIR."postType/class.postType.php";
 
-	wp_enqueue_script( 'jquery-ui-core' );
-	wp_enqueue_script( 'jquery-ui-datepicker' );
-	wp_enqueue_script( 'custom-scripts', plugin_dir_url( __FILE__ ) . 'assets/js/custom.js' );
+class RAEval {
+	private static $RAAdmin = null;
+	private static $RAFormProcessor = null;
+	private static $RAPostType = null;
 
+	public static function init(){
+		self::$RAAdmin = new RAAdmin();
+		self::$RAFormProcessor = new RAFormProcessor();
+		self::$RAPostType = new RAPostType();
+		self::$RAPostType->init();
+		self::$RAAdmin->init();
+		self::$RAFormProcessor->process();
+	}
 }
-add_action('admin_enqueue_scripts', 'raeval_admin_scripts');
 
-/*
-*
-* 	Create the Post Type of 'Evaluation'
-*
-*/
-require_once ('inc/posttypes.php');
-/*
-*
-* 	Require Metaboxes
-*
-*/
-require_once ('inc/metaboxes.php');
-/*
-*
-* 	Require Admin View
-*
-*/
-require_once ('admin/admin.php');
+add_action('init', array('RAPostType','register_posttype'));
+add_action("init",array('RAEval','init'));
