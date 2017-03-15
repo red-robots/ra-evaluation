@@ -39,6 +39,13 @@ class RAPostType {
 				'class' => 'uniqid',
 				'type' => 'text'
 			),
+			array(
+				'label' => 'Patient Score',
+				'desc' => '',
+				'id' => self::$prefix.'score',
+				'class' => 'score',
+				'type' => 'text'
+			),
 		);
 		self::$custom_meta_fields = array(
 		);
@@ -203,8 +210,6 @@ class RAPostType {
 			'menu_position' => 20,
 		);
 		register_post_type('evaluation',$args); // name used in query
-		remove_post_type_support( 'evaluation', 'title' );
 		remove_post_type_support( 'evaluation', 'editor' );
-		remove_post_type_support( 'evaluation', 'post-formats' );
 	}
 }

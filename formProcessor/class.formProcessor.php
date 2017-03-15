@@ -14,7 +14,7 @@ class RAFormProcessor {
 		$id = wp_insert_post(array(
 			'post_title'=> $uniqid,
 			'post_type'=>'evaluation',
-			'post_status'=>'published'
+			'post_status'=>'publish'
 		));
 		if($id){
 			$values = array();
