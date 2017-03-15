@@ -7,11 +7,10 @@
  */
 
 class RAPostType {
-	private static $custom_meta_fields;
-	private static $prefix;
+	private static $custom_meta_fields, $prefix, $custom_meta_fields_static;
 	public static function init() {
 		self::$prefix = 'raeval_';
-		self::$custom_meta_fields = array(
+		self::$custom_meta_fields_static = array(
 			array(
 				'label' => 'Primary Care Physician',
 				'desc' => 'Please fill in the name of the PCP.',
@@ -33,6 +32,15 @@ class RAPostType {
 				'class' => 'initials',
 				'type' => 'text'
 			),
+			array(
+				'label' => 'Unique Id',
+				'desc' => '',
+				'id' => self::$prefix.'uniqid',
+				'class' => 'uniqid',
+				'type' => 'text'
+			),
+		);
+		self::$custom_meta_fields = array(
 		);
 		add_action( 'save_post', array( 'RAPostType', 'save_custom_meta' ) );
 		add_action( 'add_meta_boxes', array( 'RAPostType', 'add_custom_meta_box' ) );
@@ -66,6 +74,14 @@ class RAPostType {
 		wp_nonce_field( basename( __FILE__ ), 'raeval_nonce' );
 
 		echo '<table class="form-table">';
+		foreach (self::$custom_meta_fields_static as $field) {
+			// get value of this field if it exists for this post
+			$meta = get_post_meta($post->ID, $field['id'], true);
+			// begin a table row with
+			echo '<tr>
+                <th><label for="'.$field['id'].'">'.$field['label'].'</label></th>
+                <td>'.$meta.'</td></tr>';
+		} // end foreach
 		foreach (self::$custom_meta_fields as $field) {
 			// get value of this field if it exists for this post
 			$meta = get_post_meta($post->ID, $field['id'], true);
@@ -141,12 +157,18 @@ class RAPostType {
 	}
 	public static function add_shortcode(){
 		ob_start();
+		echo '<form action="" method="POST">';
+		echo '<div class="ra-eval">';
+		echo '<div class="tab tab-1">';
+		require_once(plugin_dir_path(__FILE__).'questionare.php');
+		echo '</div><div class="tab tab-2">';
 		require_once(RAEVAL__PLUGIN_DIR.'inc/skeleton/skeleton-form.php');
+		echo '</div><!--.tab-2--></div><!--.ra-eval--></form><!--end ra form-->';
 		return ob_get_clean();
 	}
 	public static function front_end_styles(){
 		wp_enqueue_style( 'custom-styles' , plugin_dir_url(RAEVAL__PLUGIN_DIR). 'ra-evaluation/inc/css/style.css' );
-		wp_enqueue_script( 'custom-scripts', plugin_dir_url(RAEVAL__PLUGIN_DIR).'ra-evaluation/inc/assets/js/custom.js' );
+		wp_enqueue_script( 'custom-scripts', plugin_dir_url(RAEVAL__PLUGIN_DIR).'ra-evaluation/inc/assets/js/custom.js', array( 'jquery' ), '20170315',true );
 		wp_localize_script( 'custom-scripts', 'bella', array(
 			'admin' => false
 		));
@@ -179,8 +201,10 @@ class RAPostType {
 			'has_archive' => false,
 			'hierarchical' => false, // 'false' acts like posts 'true' acts like pages
 			'menu_position' => 20,
-			'supports' => array('title','editor','custom-fields','thumbnail'),
 		);
 		register_post_type('evaluation',$args); // name used in query
+		remove_post_type_support( 'evaluation', 'title' );
+		remove_post_type_support( 'evaluation', 'editor' );
+		remove_post_type_support( 'evaluation', 'post-formats' );
 	}
 }

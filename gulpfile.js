@@ -149,24 +149,9 @@ var reload       = browserSync.reload; // For manual browser reload.
  */
 gulp.task('styles', function () {
  	gulp.src( styleSRC )
-		.pipe( sourcemaps.init() )
-		// .pipe( sass( {
-		// 	errLogToConsole: true,
-		// 	outputStyle: 'compact',
-		// 	//outputStyle: 'compressed',
-		// 	// outputStyle: 'nested',
-		// 	// outputStyle: 'expanded',
-		// 	precision: 10
-		// } ) )
 		.pipe(sass().on('error', sass.logError))
-		.pipe( sourcemaps.write( { includeContent: false } ) )
-		.pipe( sourcemaps.init( { loadMaps: true } ) )
 		.pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
-
-		.pipe( sourcemaps.write ( styleDestination ) )
 		.pipe( gulp.dest( styleDestination ) )
-
-
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( minifycss( {
 			maxLineLen: 10

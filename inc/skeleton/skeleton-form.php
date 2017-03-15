@@ -1,5 +1,4 @@
 <div class="skeleton">
-	<form action="" method="POST">
 
     <div class="middle-1 dot-small ra-node"></div>
 	<?php
@@ -10,5 +9,4 @@
 
 	require_once 'inputs.php';
 	?>
-    </form>
 </div>
