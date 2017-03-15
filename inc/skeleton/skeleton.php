@@ -1,5 +1,5 @@
 <?php global $post;
-$values = get_post_meta($post->ID,'ra_skeleton',true);
+$values = get_post_meta($post->ID,'raeval_skeleton',true);
 if($values){
 	$values = json_decode($values,true);
 }

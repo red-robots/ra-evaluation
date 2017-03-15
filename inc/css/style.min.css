@@ -1247,6 +1247,7 @@ button:focus{outline:0}
 .dot-small,.dot-med,.dot-large{-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);-webkit-transition:all ease .2s;transition:all ease .2s}
 .dot-small:hover,.dot-med:hover,.dot-large:hover{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
 .middle-1{position:absolute;border-radius:50%;left:47.3%;top:14%}
+.post-type-evaluation #minor-publishing{display:none}
 .left-1{position:absolute;border-radius:50%}
 .left-2{position:absolute;border-radius:50%}
 .left-3{position:absolute;border-radius:50%}

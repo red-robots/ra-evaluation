@@ -50,13 +50,13 @@ class RAAdmin {
 		require_once( plugin_dir_url(__FILE__). 'options.php' );
 	}
 	public static function admin_styles() {
-		wp_enqueue_style( 'jquery-ui-datepicker-style' , 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
+		wp_enqueue_style( 'jquery-ui-datepicker-style' , 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
 		wp_enqueue_style( 'custom-styles' , plugin_dir_url(RAEVAL__PLUGIN_DIR). 'ra-evaluation/inc/css/style.css' );
 	}
 	public static function admin_scripts() {
 		wp_enqueue_script( 'jquery-ui-core' );
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_script( 'custom-scripts', plugin_dir_url(RAEVAL__PLUGIN_DIR).'ra-evaluation/inc/assets/js/custom.js' );
+		wp_enqueue_script( 'custom-scripts', plugin_dir_url(RAEVAL__PLUGIN_DIR).'ra-evaluation/inc/assets/js/custom.js', array( 'jquery' ), '20170315',true  );
 		wp_localize_script( 'custom-scripts', 'bella', array(
 			'admin' => true
 		));
