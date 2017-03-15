@@ -37,8 +37,6 @@ class RAPostType {
 		add_action( 'save_post', array( 'RAPostType', 'save_custom_meta' ) );
 		add_action( 'add_meta_boxes', array( 'RAPostType', 'add_custom_meta_box' ) );
 		add_action( 'edit_form_after_title', array( 'RAPostType', 'move_deck' ) );
-		add_action('wp_enqueue_scripts', array('RAPostType','front_end_styles'));
-		add_shortcode( 'raeval_skeleton', array('RAPostType','add_shortcode') );
 	}
 
 	public static function add_custom_meta_box() {
@@ -94,9 +92,8 @@ class RAPostType {
 			echo '</td></tr>';
 		} // end foreach
 		echo '</table>'; // end table
-		ob_start();
-		require_once(RAEVAL__PLUGIN_DIR.'inc/skeleton/skeleton.php');
-		echo ob_get_clean();
+
+		require_once(RAEVAL__PLUGIN_DIR.'postType/inc/skeleton.php');
 	}
 
 	public static function save_custom_meta($post_id) {
