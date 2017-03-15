@@ -553,7 +553,7 @@ to{visibility:hidden;-webkit-transform:translate3d(0,-100%,0);transform:translat
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */@font-face{font-family:'FontAwesome';src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0");src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0#iefix") format("embedded-opentype"),url("./fonts/font-awesome/fontawesome-webfont.woff2?v=4.5.0") format("woff2"),url("./fonts/font-awesome/fontawesome-webfont.woff?v=4.5.0") format("woff"),url("./fonts/font-awesome/fontawesome-webfont.ttf?v=4.5.0") format("truetype"),url("./fonts/font-awesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal}
-.fa{display:inline-block;font:normal normal normal 14px / 1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-15%}
 .fa-2x{font-size:2em}
 .fa-3x{font-size:3em}
@@ -1239,7 +1239,7 @@ button:focus{outline:0}
 @media screen and (min-width:600px){.skeleton{width:550px;height:805px}
 }@media screen and (min-width:900px){.skeleton{width:850px;height:1244px}
 }@media screen and (min-width:1200px){.skeleton{width:1000px;height:1463px}
-}.inactive{background-color:#ccc;-webkit-transition:all ease .2s;transition:all ease .2s}
+}.ra-node{background-color:#ccc;-webkit-transition:all ease .2s;transition:all ease .2s}
 .active{background-color:red}
 .dot-small{width:4em;height:4em}
 .dot-med{width:5em;height:5em}

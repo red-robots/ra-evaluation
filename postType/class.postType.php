@@ -141,11 +141,15 @@ class RAPostType {
 	}
 	public static function add_shortcode(){
 		ob_start();
-		require_once(RAEVAL__PLUGIN_DIR.'inc/skeleton/skeleton.php');
+		require_once(RAEVAL__PLUGIN_DIR.'inc/skeleton/skeleton-form.php');
 		return ob_get_clean();
 	}
 	public static function front_end_styles(){
 		wp_enqueue_style( 'custom-styles' , plugin_dir_url(RAEVAL__PLUGIN_DIR). 'ra-evaluation/inc/css/style.css' );
+		wp_enqueue_script( 'custom-scripts', plugin_dir_url(RAEVAL__PLUGIN_DIR).'ra-evaluation/inc/assets/js/custom.js' );
+		wp_localize_script( 'custom-scripts', 'bella', array(
+			'admin' => false
+		));
 	}
 	public static function register_posttype() {
 		// Register the Homepage Evaluations

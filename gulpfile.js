@@ -28,31 +28,31 @@ var project             = 'RA Evaluation'; // Project Name.
 var projecturl          = 'http://localhost:8888/Bellaworks/ra-app/site/'; // Project URL. Could be something like localhost:8888.
 
 
-var styleSRC            = './assets/sass/style.scss'; // Path to main .scss file.
-var styleDestination    = './css/'; // Path to place the compiled CSS file.
+var styleSRC            = './inc/assets/sass/style.scss'; // Path to main .scss file.
+var styleDestination    = './inc/css/'; // Path to place the compiled CSS file.
 								// Defualt set to root folder.
 
 
-var jsVendorSRC         = './assets/js/vendors/*.js'; // Path to JS vendors folder.
-var jsVendorDestination = './assets/js/'; // Path to place the compiled JS vendors file.
+var jsVendorSRC         = './inc/assets/js/vendors/*.js'; // Path to JS vendors folder.
+var jsVendorDestination = './inc/assets/js/'; // Path to place the compiled JS vendors file.
 var jsVendorFile        = 'vendors'; // Compiled JS vendors file name.
 									// Default set to vendors i.e. vendors.js.
 
 
-var jsCustomSRC         = './assets/js/custom/*.js'; // Path to JS custom scripts folder.
-var jsCustomDestination = './assets/js/'; // Path to place the compiled JS custom scripts file.
+var jsCustomSRC         = './inc/assets/js/custom/*.js'; // Path to JS custom scripts folder.
+var jsCustomDestination = './inc/assets/js/'; // Path to place the compiled JS custom scripts file.
 var jsCustomFile        = 'custom'; // Compiled JS custom file name.
 									// Default set to custom i.e. custom.js.
 
 
-var imagesSRC			= './assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
-var imagesDestination	= './assets/img/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
+var imagesSRC			= './inc/assets/img/raw/**/*.{png,jpg,gif,svg}'; // Source folder of images which should be optimized.
+var imagesDestination	= './inc/assets/img/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 
 // Watch files paths.
-var styleWatchFiles     = './assets/sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
-var vendorJSWatchFiles  = './assets/js/vendors/*.js'; // Path to all vendors JS files.
-var customJSWatchFiles  = './assets/js/custom/*.js'; // Path to all custom JS files.
+var styleWatchFiles     = './inc/assets/sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
+var vendorJSWatchFiles  = './inc/assets/js/vendors/*.js'; // Path to all vendors JS files.
+var customJSWatchFiles  = './inc/assets/js/custom/*.js'; // Path to all custom JS files.
 
 
 // Browsers you care about for autoprefixing.

@@ -56,7 +56,10 @@ class RAAdmin {
 	public static function admin_scripts() {
 		wp_enqueue_script( 'jquery-ui-core' );
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_script( 'custom-scripts', plugin_dir_url(RAEVAL__PLUGIN_DIR).'ra-evaulation/inc/assets/js/custom.js' );
+		wp_enqueue_script( 'custom-scripts', plugin_dir_url(RAEVAL__PLUGIN_DIR).'ra-evaluation/inc/assets/js/custom.js' );
+		wp_localize_script( 'custom-scripts', 'bella', array(
+			'admin' => true
+		));
 	}
 
 }
