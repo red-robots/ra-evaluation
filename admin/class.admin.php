@@ -33,7 +33,7 @@ class RAAdmin {
 			$cap,
 			$slug_evaluation,
 			false,
-			plugin_dir_url( __FILE__ ) . 'images/dashicon.png',
+			plugin_dir_url( RAEVAL__PLUGIN_DIR) . 'ra-evaluation/inc/images/dashicon.png',
 			'21'
 		);
 		add_submenu_page(
@@ -47,16 +47,16 @@ class RAAdmin {
 		);
 	}
 	public static function options_page() {
-		require_once( RAEVAL__PLUGIN_DIR. 'admin/options.php' );
+		require_once( plugin_dir_url(__FILE__). 'options.php' );
 	}
 	public static function admin_styles() {
 		wp_enqueue_style( 'jquery-ui-datepicker-style' , 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
-		wp_enqueue_style( 'custom-styles' , plugin_dir_url(__FILE__). 'css/style.css' );
+		wp_enqueue_style( 'custom-styles' , plugin_dir_url(RAEVAL__PLUGIN_DIR). 'ra-evaluation/inc/css/style.css' );
 	}
 	public static function admin_scripts() {
 		wp_enqueue_script( 'jquery-ui-core' );
 		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_script( 'custom-scripts', plugin_dir_url(__FILE__).'assets/js/custom.js' );
+		wp_enqueue_script( 'custom-scripts', plugin_dir_url(RAEVAL__PLUGIN_DIR).'ra-evaulation/inc/assets/js/custom.js' );
 	}
 
 }

@@ -37,6 +37,8 @@ class RAPostType {
 		add_action( 'save_post', array( 'RAPostType', 'save_custom_meta' ) );
 		add_action( 'add_meta_boxes', array( 'RAPostType', 'add_custom_meta_box' ) );
 		add_action( 'edit_form_after_title', array( 'RAPostType', 'move_deck' ) );
+		add_action('wp_enqueue_scripts', array('RAPostType','front_end_styles'));
+		add_shortcode( 'raeval_skeleton', array('RAPostType','add_shortcode') );
 	}
 
 	public static function add_custom_meta_box() {
@@ -92,8 +94,9 @@ class RAPostType {
 			echo '</td></tr>';
 		} // end foreach
 		echo '</table>'; // end table
-
-		require_once(RAEVAL__PLUGIN_DIR.'postType/inc/skeleton.php');
+		ob_start();
+		require_once(RAEVAL__PLUGIN_DIR.'inc/skeleton/skeleton.php');
+		echo ob_get_clean();
 	}
 
 	public static function save_custom_meta($post_id) {
@@ -114,13 +117,35 @@ class RAPostType {
 		// loop through fields and save the data
 		foreach (self::$custom_meta_fields as $field) {
 			$old = get_post_meta($post_id, $field['id'], true);
-			$new = $_POST[$field['id']];
+			if(isset($_POST[$field['id']])) {
+				switch ( $field['type'] ) {
+					case 'text':
+						$new = sanitize_text_field( $_POST[ $field['id'] ] );
+						break;
+					case 'number':
+						$new = sanitize_text_field( $_POST[ $field['id'] ] );
+						break;
+					case 'textarea':
+						$new = sanitize_textarea_field( $_POST[ $field['id'] ] );
+						break;
+				} //end switch
+			} else {
+				$new = '';
+			}
 			if ($new && $new != $old) {
 				update_post_meta($post_id, $field['id'], $new);
 			} elseif ('' == $new && $old) {
 				delete_post_meta($post_id, $field['id'], $old);
 			}
 		} // end foreach
+	}
+	public static function add_shortcode(){
+		ob_start();
+		require_once(RAEVAL__PLUGIN_DIR.'inc/skeleton/skeleton.php');
+		return ob_get_clean();
+	}
+	public static function front_end_styles(){
+		wp_enqueue_style( 'custom-styles' , plugin_dir_url(RAEVAL__PLUGIN_DIR). 'ra-evaluation/inc/css/style.css' );
 	}
 	public static function register_posttype() {
 		// Register the Homepage Evaluations
