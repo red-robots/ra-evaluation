@@ -1,20 +1,7 @@
 * { -webkit-hyphens: none; }
 div {
-	/* These are technically the same, but use both */
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-
-	-ms-word-break: break-all;
-	/* This is the dangerous one in WebKit, as it breaks things wherever */
-	word-break: break-all;
-	/* Instead use this non-standard one: */
-	word-break: break-word;
-
-	/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
+	
+	
 }
 .clear {clear: both;}
 .wrapper {
@@ -90,3 +77,21 @@ div {
 		/*width: 1200px;*/
 	}
 }
+.tabs {
+	list-style:none;
+	display:inline;
+}
+
+.tabs a {
+	padding:5px 10px;
+	display:inline-block;
+	background:#666;
+	color:#fff;
+	text-decoration:none;
+}
+
+.tabs a.active {
+	background:#fff;
+	color:#000;
+}
+

@@ -166,9 +166,10 @@ class RAPostType {
 		ob_start();
 		echo '<form action="" method="POST">';
 		echo '<div class="ra-eval">';
-		echo '<div class="tab tab-1">';
+		echo '<ul class="tabs"><li><a href="#tab1">Step 1</a></li><li><a href="#tab2">Step 2</a></li></ul>';
+		echo '<div id="tab1" class="tab-content">';
 		require_once(plugin_dir_path(__FILE__).'questionare.php');
-		echo '</div><div class="tab tab-2">';
+		echo '</div><div id="tab2" class="tab-content">';
 		require_once(RAEVAL__PLUGIN_DIR.'inc/skeleton/skeleton-form.php');
 		echo '</div><!--.tab-2--></div><!--.ra-eval--></form><!--end ra form-->';
 		return ob_get_clean();

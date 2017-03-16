@@ -2432,7 +2432,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 14px / 1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -4679,8 +4679,8 @@ button:focus {
 # Content
 --------------------------------------------------------------*/
 .skeleton {
-  width: 1000px;
-  height: 1463px;
+  width: 400px;
+  height: 439px;
   position: relative;
   background-image: url(../images/skeleton.png);
   background-size: cover; }
@@ -4696,26 +4696,104 @@ button:focus {
     .skeleton {
       width: 1000px;
       height: 1463px; } }
+  .skeleton .active {
+    background-color: #f00; }
+  .skeleton .skeleton-submit {
+    background-color: #ec4e4e;
+    padding: 20px 25px;
+    box-shadow: none;
+    text-transform: uppercase;
+    color: #fff;
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    border: 0;
+    text-shadow: transparent;
+    width: auto;
+    position: fixed;
+    top: 10px;
+    right: 10px; }
+    .skeleton .skeleton-submit:hover {
+      background-color: #083b66;
+      box-shadow: none;
+      text-shadow: transparent; }
+
+.ra-eval {
+  padding: 5%; }
+
+.tab-content {
+  background-color: #fff;
+  padding: 2%;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+
+ul.tabs {
+  margin: 0;
+  padding: 0; }
+  ul.tabs li {
+    list-style: none;
+    display: inline;
+    width: auto; }
+  ul.tabs a {
+    padding: 25px 30px;
+    display: inline-block;
+    background: #666;
+    color: #fff;
+    text-decoration: none; }
+  ul.tabs a.active {
+    background: #fff;
+    color: #ec4e4e; }
 
 .ra-node {
   background-color: #ccc;
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s; }
 
-.active {
-  background-color: #f00; }
-
 .dot-small {
-  width: 4em;
-  height: 4em; }
+  width: 1.5em;
+  height: 1.5em; }
+  @media screen and (min-width: 600px) {
+    .dot-small {
+      width: 2.5em;
+      height: 2.5em; } }
+  @media screen and (min-width: 900px) {
+    .dot-small {
+      width: 2.5em;
+      height: 2.5em; } }
+  @media screen and (min-width: 1200px) {
+    .dot-small {
+      width: 3.5em;
+      height: 3.5em; } }
 
 .dot-med {
-  width: 5em;
-  height: 5em; }
+  width: 2em;
+  height: 2em; }
+  @media screen and (min-width: 600px) {
+    .dot-med {
+      width: 3em;
+      height: 3em; } }
+  @media screen and (min-width: 900px) {
+    .dot-med {
+      width: 3em;
+      height: 3em; } }
+  @media screen and (min-width: 1200px) {
+    .dot-med {
+      width: 4em;
+      height: 4em; } }
 
 .dot-large {
-  width: 6em;
-  height: 6em; }
+  width: 3em;
+  height: 3em; }
+  @media screen and (min-width: 600px) {
+    .dot-large {
+      width: 4em;
+      height: 4em; } }
+  @media screen and (min-width: 900px) {
+    .dot-large {
+      width: 5em;
+      height: 5em; } }
+  @media screen and (min-width: 1200px) {
+    .dot-large {
+      width: 6em;
+      height: 6em; } }
 
 .dot-small, .dot-med, .dot-large {
   -webkit-transform: scale(0.9);

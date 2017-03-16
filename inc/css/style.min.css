@@ -553,7 +553,7 @@ to{visibility:hidden;-webkit-transform:translate3d(0,-100%,0);transform:translat
  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */@font-face{font-family:'FontAwesome';src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0");src:url("./fonts/font-awesome/fontawesome-webfont.eot?v=4.5.0#iefix") format("embedded-opentype"),url("./fonts/font-awesome/fontawesome-webfont.woff2?v=4.5.0") format("woff2"),url("./fonts/font-awesome/fontawesome-webfont.woff?v=4.5.0") format("woff"),url("./fonts/font-awesome/fontawesome-webfont.ttf?v=4.5.0") format("truetype"),url("./fonts/font-awesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");font-weight:normal;font-style:normal}
-.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.fa{display:inline-block;font:normal normal normal 14px / 1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-15%}
 .fa-2x{font-size:2em}
 .fa-3x{font-size:3em}
@@ -1235,16 +1235,33 @@ optgroup{font-weight:bold}
 table{border-collapse:collapse;border-spacing:0}
 td,th{padding:0}
 button:focus{outline:0}
-.skeleton{width:1000px;height:1463px;position:relative;background-image:url(../images/skeleton.png);background-size:cover}
+.skeleton{width:400px;height:439px;position:relative;background-image:url(../images/skeleton.png);background-size:cover}
 @media screen and (min-width:600px){.skeleton{width:550px;height:805px}
 }@media screen and (min-width:900px){.skeleton{width:850px;height:1244px}
 }@media screen and (min-width:1200px){.skeleton{width:1000px;height:1463px}
-}.ra-node{background-color:#ccc;-webkit-transition:all ease .2s;transition:all ease .2s}
-.active{background-color:red}
-.dot-small{width:4em;height:4em}
-.dot-med{width:5em;height:5em}
-.dot-large{width:6em;height:6em}
-.dot-small,.dot-med,.dot-large{-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);-webkit-transition:all ease .2s;transition:all ease .2s}
+}.skeleton .active{background-color:red}
+.skeleton .skeleton-submit{background-color:#ec4e4e;padding:20px 25px;box-shadow:none;text-transform:uppercase;color:#fff;-webkit-transition:all ease .3s;transition:all ease .3s;border:0;text-shadow:transparent;width:auto;position:fixed;top:10px;right:10px}
+.skeleton .skeleton-submit:hover{background-color:#083b66;box-shadow:none;text-shadow:transparent}
+.ra-eval{padding:5%}
+.tab-content{background-color:#fff;padding:2%;border:1px solid rgba(0,0,0,0.2)}
+ul.tabs{margin:0;padding:0}
+ul.tabs li{list-style:none;display:inline;width:auto}
+ul.tabs a{padding:25px 30px;display:inline-block;background:#666;color:#fff;text-decoration:none}
+ul.tabs a.active{background:#fff;color:#ec4e4e}
+.ra-node{background-color:#ccc;-webkit-transition:all ease .2s;transition:all ease .2s}
+.dot-small{width:1.5em;height:1.5em}
+@media screen and (min-width:600px){.dot-small{width:2.5em;height:2.5em}
+}@media screen and (min-width:900px){.dot-small{width:2.5em;height:2.5em}
+}@media screen and (min-width:1200px){.dot-small{width:3.5em;height:3.5em}
+}.dot-med{width:2em;height:2em}
+@media screen and (min-width:600px){.dot-med{width:3em;height:3em}
+}@media screen and (min-width:900px){.dot-med{width:3em;height:3em}
+}@media screen and (min-width:1200px){.dot-med{width:4em;height:4em}
+}.dot-large{width:3em;height:3em}
+@media screen and (min-width:600px){.dot-large{width:4em;height:4em}
+}@media screen and (min-width:900px){.dot-large{width:5em;height:5em}
+}@media screen and (min-width:1200px){.dot-large{width:6em;height:6em}
+}.dot-small,.dot-med,.dot-large{-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);-webkit-transition:all ease .2s;transition:all ease .2s}
 .dot-small:hover,.dot-med:hover,.dot-large:hover{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
 .middle-1{position:absolute;border-radius:50%;left:47.3%;top:14%}
 .post-type-evaluation #minor-publishing{display:none}

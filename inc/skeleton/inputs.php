@@ -81,5 +81,5 @@ wp_nonce_field( basename( RAEVAL__PLUGIN_DIR ), 'raeval_nonce' );
 <input type="hidden" name="right-34" value="">
 <input type="hidden" name="right-35" value="">
 <input type="hidden" name="right-36" value="">
-<input type="submit" value="submit">
+<input type="submit" value="submit" class="skeleton-submit">
 
