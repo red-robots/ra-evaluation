@@ -71,8 +71,47 @@ ul.tabs {
 	}
 }
 .ra-node {
-	background-color: #ccc;
-	@include transition(all ease .2s);
+  background-color: #ccc;
+  @include transition(all ease .2s);
+  position: relative;
+  &.box-open {
+    z-index: 2;
+  }
+  &.active-1 {
+    background-color: $color-gold;
+  }
+  &.active-2 {
+    background-color: orange;
+  }
+  &.active-3 {
+    background-color: $color-red;
+  }
+  .ra-selector-box {
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    z-index: 5;
+    .box {
+      margin-bottom: 10px;
+      color: white;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    .active-1 {
+      background-color: $color-gold;
+    }
+    .active-2 {
+      background-color: orange;
+    }
+    .active-3 {
+      background-color: $color-red;
+    }
+    .inactive {
+      background-color: #ccc;
+    }
+  }
 }
 
 .dot-small {

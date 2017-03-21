@@ -5,7 +5,7 @@ if($values){
 }
 ?>
 <div class="skeleton">
-	<div class="middle-1 dot-small ra-node <?php if($values && $values['middle-1']) echo "active";?>"></div>
+	<div class="middle-1 dot-small ra-node <?php if($values && $values['middle-1']) echo "active-".$values['middle-1'];?>"></div>
 	<?php
 
 	require_once 'body-left.php';

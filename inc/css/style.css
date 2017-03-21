@@ -2432,7 +2432,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px / 1 FontAwesome;
+  font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -4745,7 +4745,36 @@ ul.tabs {
 .ra-node {
   background-color: #ccc;
   -webkit-transition: all ease 0.2s;
-  transition: all ease 0.2s; }
+  transition: all ease 0.2s;
+  position: relative; }
+  .ra-node.box-open {
+    z-index: 2; }
+  .ra-node.active-1 {
+    background-color: #c0b283; }
+  .ra-node.active-2 {
+    background-color: orange; }
+  .ra-node.active-3 {
+    background-color: #ec4e4e; }
+  .ra-node .ra-selector-box {
+    position: absolute;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    z-index: 5; }
+    .ra-node .ra-selector-box .box {
+      margin-bottom: 10px;
+      color: white;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px; }
+    .ra-node .ra-selector-box .active-1 {
+      background-color: #c0b283; }
+    .ra-node .ra-selector-box .active-2 {
+      background-color: orange; }
+    .ra-node .ra-selector-box .active-3 {
+      background-color: #ec4e4e; }
+    .ra-node .ra-selector-box .inactive {
+      background-color: #ccc; }
 
 .dot-small {
   width: 1.5em;

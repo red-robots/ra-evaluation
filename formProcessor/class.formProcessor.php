@@ -20,7 +20,7 @@ class RAFormProcessor {
 			$values = array();
 			$score =0;
 			if(isset($_POST['middle-1'])){
-				$val = strcmp(sanitize_text_field($_POST['middle-1']),"1")===0?1:0;
+				$val = preg_match('/[123]/',sanitize_text_field($_POST['middle-1']))===1?sanitize_text_field($_POST['middle-1']):0;
 				$values['middle-1'] = $val;
 				$score += $val;
 			} else {
@@ -28,7 +28,7 @@ class RAFormProcessor {
 			}
 			for($i=1;$i<37;$i++){
 				if(isset($_POST['left-'.$i])){
-					$val = strcmp(sanitize_text_field($_POST['left-'.$i]),"1")===0?1:0;
+					$val = preg_match('/[123]/',sanitize_text_field($_POST['left-'.$i]))===1?sanitize_text_field($_POST['left-'.$i]):0;
 					$values['left-'.$i] = $val;
 					$score += $val;
 				} else {
@@ -37,7 +37,7 @@ class RAFormProcessor {
 			}
 			for($i=1;$i<37;$i++){
 				if(isset($_POST['right-'.$i])){
-					$val = strcmp(sanitize_text_field($_POST['right-'.$i]),"1")===0?1:0;
+					$val = preg_match('/[123]/',sanitize_text_field($_POST['right-'.$i]))===1?sanitize_text_field($_POST['right-'.$i]):0;
 					$values['right-'.$i] = $val;
 					$score += $val;
 				} else {
