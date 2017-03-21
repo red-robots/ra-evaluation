@@ -33,6 +33,41 @@ class RAPostType {
 				'type' => 'text'
 			),
 			array(
+				'label' => 'DOB',
+				'desc' => '',
+				'id' => self::$prefix.'dob',
+				'class' => 'dob',
+				'type' => 'text'
+			),
+			array(
+				'label' => 'Joint Score',
+				'desc' => '',
+				'id' => self::$prefix.'joint_score',
+				'class' => 'joint-score',
+				'type' => 'text'
+			),
+			array(
+				'label' => 'Serology',
+				'desc' => '',
+				'id' => self::$prefix.'serology',
+				'class' => 'serology',
+				'type' => 'text'
+			),
+			array(
+				'label' => 'Duration of Symptoms',
+				'desc' => '',
+				'id' => self::$prefix.'duration',
+				'class' => 'duration',
+				'type' => 'text'
+			),
+			array(
+				'label' => 'Acute Phase Reactants',
+				'desc' => '',
+				'id' => self::$prefix.'apr',
+				'class' => 'apr',
+				'type' => 'text'
+			),
+			array(
 				'label' => 'Unique Id',
 				'desc' => '',
 				'id' => self::$prefix.'uniqid',
@@ -40,7 +75,7 @@ class RAPostType {
 				'type' => 'text'
 			),
 			array(
-				'label' => 'Patient Score',
+				'label' => 'Patient Overall Score',
 				'desc' => '',
 				'id' => self::$prefix.'score',
 				'class' => 'score',
@@ -176,6 +211,9 @@ class RAPostType {
 	}
 	public static function front_end_styles(){
 		wp_enqueue_style( 'custom-styles' , plugin_dir_url(RAEVAL__PLUGIN_DIR). 'ra-evaluation/inc/css/style.css' );
+		wp_enqueue_style( 'jquery-ui-datepicker-style' , 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
+		wp_enqueue_script( 'jquery-ui-core' );
+		wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_script( 'custom-scripts', plugin_dir_url(RAEVAL__PLUGIN_DIR).'ra-evaluation/inc/assets/js/custom.js', array( 'jquery' ), '20170315',true );
 		wp_localize_script( 'custom-scripts', 'bella', array(
 			'admin' => false

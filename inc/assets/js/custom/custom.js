@@ -18,6 +18,8 @@ jQuery(document).ready(function ($) {
 
 
     if(!bella.admin){
+        jQuery('.js-datepicker').datepicker();
+
         $('body').on('click',function(){
             $('.ra-selector-box').detach();
             $('.ra-node.box-open').removeClass("box-open");
