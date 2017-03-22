@@ -35,11 +35,11 @@ jQuery(document).ready(function ($) {
             $('.ra-node.box-open').not($node_this).removeClass("box-open");
             if(!$node_this.hasClass("box-open")){
                 $selector_box = $('<div class="ra-selector-box"></div>');
-                $selector_s = $('<div class="box active-1">swollen</div>');
-                $selector_t = $('<div class="box active-2">tender</div>');
+                $selector_t = $('<div class="box active-1">tender</div>');
+                $selector_s = $('<div class="box active-2">swollen</div>');
                 $selector_ts = $('<div class="box active-3">tender and swollen</div>');
                 $selector_n = $('<div class="box inactive">deselect</div>');
-                $selector_box.append($selector_s,$selector_t,$selector_ts,$selector_n);
+                $selector_box.append($selector_t,$selector_s,$selector_ts,$selector_n);
                 $node_this.append($selector_box);
                 $node_this.addClass("box-open");
                 $selector_box.on('click',process_selector);

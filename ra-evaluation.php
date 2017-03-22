@@ -36,5 +36,7 @@ class RAEval {
 	}
 }
 
+register_activation_hook( __FILE__, array('RAPostType','plugin_activation') );
+add_action('init',array('RAPostType','redirect_login_page'),0);
 add_action('init', array('RAPostType','register_posttype'));
 add_action("init",array('RAEval','init'));

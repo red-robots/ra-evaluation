@@ -41,9 +41,71 @@
 			text-shadow: rgba(0,0,0,0);
 		}
 	}
+  .key {
+    width: 250px;
+    .line {
+      margin: 0 0 10px 0;
+      .box {
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        margin-right: 5px;
+        display: inline-block;
+        vertical-align: middle;
+        &.active-1 {
+          background-color: $color-gold;
+        }
+        &.active-2 {
+          background-color: orange;
+        }
+        &.active-3 {
+          background-color: $color-red;
+        }
+      }
+    }
+  }
 }
 .ra-eval {
 	padding: 5%;
+    .completed {
+      background-color: #fff;
+      padding: 10% 2%;
+      border: 1px solid rgba(0,0,0,.2);
+      text-align: center;
+      color: $color-blue;
+      h2 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1;
+        @media screen and (min-width: $tabwidth) {
+          font-size: 75px;
+        }
+      }
+      p {
+        font-size: 18px;
+        margin: 10px 0 30px 0;
+        @media screen and (min-width: $tabwidth) {
+          font-size: 35px;
+        }
+      }
+      .button {
+        width: 40%;
+        margin: 0 auto;
+        min-width: 200px;
+        border-radius: 5px;
+        background-color: $color-blue;
+        a {
+          display: block;
+          color: white;
+          text-decoration:none;
+          padding: 5%;
+          font-size: 18px;
+          @media screen and (min-width: $tabwidth) {
+            font-size: 35px;
+          }
+        }
+      }
+    }
 }
 .tab-content {
 	background-color: #fff;
@@ -181,3 +243,22 @@ ul.tabs {
 
 @import "body-left";
 @import "body-right";
+
+.login-form {
+  width: 60%;
+  padding: 2%;
+  margin: 10% auto;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 0 25px lightgrey;
+  border-radius: 10px;
+  form {
+    label {
+      display: block;
+
+    }
+    input {
+      max-width: 100%;
+    }
+  }
+}
