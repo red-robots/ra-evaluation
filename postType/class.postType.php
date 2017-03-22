@@ -97,14 +97,6 @@ class RAPostType {
 	}
 	public static function plugin_activation() {
 		add_role( 'doctor', 'Doctor', array( 'read' => false) );
-		$id = post_exists('login');
-		if(!$id) {
-			wp_insert_post( array(
-				'post_title'  => 'login',
-				'post_type'   => 'page',
-				'post_status' => 'publish'
-			) );
-		}
 	}
 	public static function add_custom_meta_box() {
 		add_meta_box(
@@ -283,8 +275,10 @@ class RAPostType {
 			$parsed_wp_login_page = parse_url(home_url('/wp-login.php'));
 			$parsed_login_page = parse_url($login_page);
 			$parsed_page_viewed = parse_url( $_SERVER['REQUEST_URI'] );
-			if($parsed_login_page&&$parsed_page_viewed&&$parsed_wp_login_page&&!empty($parsed_login_page['path'])&&!empty($parsed_page_viewed['path']&&!empty($parsed_wp_login_page['path']))){
-				if(strcmp($parsed_page_viewed['path'],$parsed_login_page['path'])!==0&&!(strcmp($parsed_wp_login_page['path'],$parsed_page_viewed['path'])===0 && strcmp($_SERVER['REQUEST_METHOD'],'POST')===0)) {
+			if($parsed_login_page&&$parsed_page_viewed&&$parsed_wp_login_page
+			   &&!empty($parsed_login_page['path'])&&!empty($parsed_page_viewed['path']&&!empty($parsed_wp_login_page['path']))){
+				if(strcmp($parsed_page_viewed['path'],$parsed_login_page['path'])!==0
+				   &&!(strcmp($parsed_wp_login_page['path'],$parsed_page_viewed['path'])===0 && strcmp($_SERVER['REQUEST_METHOD'],'POST')===0)) {
 					wp_redirect( $login_page );
 					exit;
 				}
