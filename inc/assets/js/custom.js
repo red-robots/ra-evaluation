@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
             $('.ra-selector-box').detach();
             $('.ra-node.box-open').removeClass("box-open");
         });
-	    $('.ra-node').click(function(e){
+	    $('.ra-node').not('.non-click').click(function(e){
 	        e.preventDefault();
 	        e.stopPropagation();
             var $node_this = $(this);

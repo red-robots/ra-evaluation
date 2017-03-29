@@ -8,7 +8,7 @@
 
 <!-- right Hand -->
 <div class="right-6 dot-large ra-node <?php if($values && $values['right-6']) echo "active-".$values['right-6'];?>"></div>
-<div class="right-7 dot-small ra-node <?php if($values && $values['right-7']) echo "active-".$values['right-7'];?>"></div>
+<div class="right-7 dot-small non-click ra-node <?php if($values && $values['right-7']) echo "active-".$values['right-7'];?>"></div>
 <div class="right-8 dot-small ra-node <?php if($values && $values['right-8']) echo "active-".$values['right-8'];?>"></div>
 <div class="right-9 dot-small ra-node <?php if($values && $values['right-9']) echo "active-".$values['right-9'];?>"></div>
 <div class="right-10 dot-small ra-node <?php if($values && $values['right-10']) echo "active-".$values['right-10'];?>"></div>
@@ -19,22 +19,22 @@
 <div class="right-15 dot-small ra-node <?php if($values && $values['right-15']) echo "active-".$values['right-15'];?>"></div>
 <div class="right-16 dot-small ra-node <?php if($values && $values['right-16']) echo "active-".$values['right-16'];?>"></div>
 <div class="right-17 dot-small ra-node <?php if($values && $values['right-17']) echo "active-".$values['right-17'];?>"></div>
-<div class="right-18 dot-small ra-node <?php if($values && $values['right-18']) echo "active-".$values['right-18'];?>"></div>
-<div class="right-19 dot-small ra-node <?php if($values && $values['right-19']) echo "active-".$values['right-19'];?>"></div>
-<div class="right-20 dot-small ra-node <?php if($values && $values['right-20']) echo "active-".$values['right-20'];?>"></div>
-<div class="right-21 dot-small ra-node <?php if($values && $values['right-21']) echo "active-".$values['right-21'];?>"></div>
+<div class="right-18 dot-small non-click ra-node <?php if($values && $values['right-18']) echo "active-".$values['right-18'];?>"></div>
+<div class="right-19 dot-small non-click ra-node <?php if($values && $values['right-19']) echo "active-".$values['right-19'];?>"></div>
+<div class="right-20 dot-small non-click ra-node <?php if($values && $values['right-20']) echo "active-".$values['right-20'];?>"></div>
+<div class="right-21 dot-small non-click ra-node <?php if($values && $values['right-21']) echo "active-".$values['right-21'];?>"></div>
 
 <!-- right Leg -->
-<div class="right-22 dot-med ra-node <?php if($values && $values['right-22']) echo "active-".$values['right-22'];?>"></div>
+<div class="right-22 dot-large ra-node <?php if($values && $values['right-22']) echo "active-".$values['right-22'];?>"></div>
 <div class="right-23 dot-large ra-node <?php if($values && $values['right-23']) echo "active-".$values['right-23'];?>"></div>
-<div class="right-24 dot-med ra-node <?php if($values && $values['right-24']) echo "active-".$values['right-24'];?>"></div>
+<div class="right-24 dot-large ra-node <?php if($values && $values['right-24']) echo "active-".$values['right-24'];?>"></div>
 <div class="right-25 dot-small ra-node <?php if($values && $values['right-25']) echo "active-".$values['right-25'];?>"></div>
 <div class="right-26 dot-small ra-node <?php if($values && $values['right-26']) echo "active-".$values['right-26'];?>"></div>
 <div class="right-27 dot-small ra-node <?php if($values && $values['right-27']) echo "active-".$values['right-27'];?>"></div>
 <div class="right-28 dot-small ra-node <?php if($values && $values['right-28']) echo "active-".$values['right-28'];?>"></div>
 <div class="right-29 dot-small ra-node <?php if($values && $values['right-29']) echo "active-".$values['right-29'];?>"></div>
 <div class="right-30 dot-small ra-node <?php if($values && $values['right-30']) echo "active-".$values['right-30'];?>"></div>
-<div class="right-31 dot-small ra-node <?php if($values && $values['right-31']) echo "active-".$values['right-31'];?>"></div>
+<div class="right-31 dot-small non-click ra-node <?php if($values && $values['right-31']) echo "active-".$values['right-31'];?>"></div>
 <div class="right-32 dot-small ra-node <?php if($values && $values['right-32']) echo "active-".$values['right-32'];?>"></div>
 <div class="right-33 dot-small ra-node <?php if($values && $values['right-33']) echo "active-".$values['right-33'];?>"></div>
 <div class="right-34 dot-small ra-node <?php if($values && $values['right-34']) echo "active-".$values['right-34'];?>"></div>

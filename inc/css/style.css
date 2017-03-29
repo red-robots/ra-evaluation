@@ -4733,6 +4733,8 @@ button:focus {
           background-color: orange; }
         .skeleton .key .line .box.active-3 {
           background-color: #ec4e4e; }
+        .skeleton .key .line .box.non-click {
+          background-color: black; }
 
 .ra-eval {
   padding: 5%; }
@@ -4798,6 +4800,8 @@ ul.tabs {
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
   position: relative; }
+  .ra-node.non-click {
+    background-color: black; }
   .ra-node.box-open {
     z-index: 2; }
   .ra-node.active-1 {
