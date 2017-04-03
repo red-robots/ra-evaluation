@@ -1248,6 +1248,7 @@ button:focus{outline:0}
 .skeleton .key .line .box.active-1{background-color:#c0b283}
 .skeleton .key .line .box.active-2{background-color:orange}
 .skeleton .key .line .box.active-3{background-color:#ec4e4e}
+.skeleton .key .line .box.non-click{background-color:black}
 .ra-eval{padding:5%}
 .ra-eval .completed{background-color:#fff;padding:10% 2%;border:1px solid rgba(0,0,0,0.2);text-align:center;color:#083b66}
 .ra-eval .completed h2{margin:0;font-size:20px;line-height:1}
@@ -1264,13 +1265,13 @@ ul.tabs a{padding:25px 30px;display:inline-block;background:#666;color:#fff;text
 ul.tabs a.active{background:#fff;color:#ec4e4e}
 .ra-node{background-color:#ccc;-webkit-transition:all ease .2s;transition:all ease .2s;position:relative;cursor:pointer}
 .ra-node:hover{background-color:#333}
+.ra-node.non-click{background-color:black}
 .ra-node.box-open{z-index:2}
 .ra-node.active-1{background-color:#c0b283}
 .ra-node.active-2{background-color:orange}
 .ra-node.active-3{background-color:#ec4e4e}
 .ra-node .ra-selector-box{position:absolute;top:0;left:-250px;width:250px;z-index:5}
-.ra-node .ra-selector-box .box{margin-bottom:10px;color:white;text-align:center;border-radius:5px;padding:5px;-webkit-transform:scale(0.95);-ms-transform:scale(0.95);transform:scale(0.95);-webkit-transition:all ease .1s;transition:all ease .1s}
-.ra-node .ra-selector-box .box:hover{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}
+.ra-node .ra-selector-box .box{margin-bottom:10px;color:white;text-align:center;border-radius:5px;padding:5px;-webkit-transition:all ease .1s;transition:all ease .1s}
 .ra-node .ra-selector-box .active-1{background-color:#c0b283}
 .ra-node .ra-selector-box .active-2{background-color:orange}
 .ra-node .ra-selector-box .active-3{background-color:#ec4e4e}

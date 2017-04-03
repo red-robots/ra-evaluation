@@ -4733,6 +4733,8 @@ button:focus {
           background-color: orange; }
         .skeleton .key .line .box.active-3 {
           background-color: #ec4e4e; }
+        .skeleton .key .line .box.non-click {
+          background-color: black; }
 
 .ra-eval {
   padding: 5%; }
@@ -4801,6 +4803,8 @@ ul.tabs {
   cursor: pointer; }
   .ra-node:hover {
     background-color: #333; }
+  .ra-node.non-click {
+    background-color: black; }
   .ra-node.box-open {
     z-index: 2; }
   .ra-node.active-1 {
@@ -4821,15 +4825,8 @@ ul.tabs {
       text-align: center;
       border-radius: 5px;
       padding: 5px;
-      -webkit-transform: scale(0.95);
-          -ms-transform: scale(0.95);
-              transform: scale(0.95);
       -webkit-transition: all ease 0.1s;
       transition: all ease 0.1s; }
-      .ra-node .ra-selector-box .box:hover {
-        -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-                transform: scale(1); }
     .ra-node .ra-selector-box .active-1 {
       background-color: #c0b283; }
     .ra-node .ra-selector-box .active-2 {

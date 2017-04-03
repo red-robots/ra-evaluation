@@ -31,13 +31,16 @@ class RAFormProcessor {
 			$score  = 0;
 			$large_joint_affected = 0;
 			$small_joint_affected = 0;
-			$large_joints = array(4,5,6,22,23,24);
+			$large_joints = array(4,5,22,23,24);
+			$non_click_joins = array(7,18,19,20,21,31);
 			$joint_score = 0;
 			//save values for skeleton
 			if ( isset( $_POST['middle-1'] ) ) {
 				$val                = preg_match( '/[123]/', sanitize_text_field( $_POST['middle-1'] ) ) === 1 ? sanitize_text_field( $_POST['middle-1'] ) : 0;
 				$values['middle-1'] = $val;
-				$small_joint_affected++;
+				if($val>0) {
+					$small_joint_affected ++;
+				}
 			} else {
 				$values['middle-1'] = 0;
 			}
@@ -46,10 +49,12 @@ class RAFormProcessor {
 					$val                    = preg_match( '/[123]/', sanitize_text_field( $_POST[ 'left-' . $i ] ) ) === 1 ? sanitize_text_field( $_POST[ 'left-' . $i ] ) : 0;
 					$values[ 'left-' . $i ] = $val;
 					if($val>0) {
-						if ( in_array( $i, $large_joints ) ) {
-							$large_joint_affected ++;
-						} else {
-							$small_joint_affected ++;
+						if(!in_array($i,$non_click_joins)) {
+							if ( in_array( $i, $large_joints ) ) {
+								$large_joint_affected ++;
+							} else {
+								$small_joint_affected ++;
+							}
 						}
 					}
 				} else {
@@ -61,10 +66,12 @@ class RAFormProcessor {
 					$val                     = preg_match( '/[123]/', sanitize_text_field( $_POST[ 'right-' . $i ] ) ) === 1 ? sanitize_text_field( $_POST[ 'right-' . $i ] ) : 0;
 					$values[ 'right-' . $i ] = $val;
 					if($val>0){
-						if ( in_array( $i, $large_joints ) ) {
-							$large_joint_affected ++;
-						} else {
-							$small_joint_affected ++;
+						if(!in_array($i,$non_click_joins)) {
+							if ( in_array( $i, $large_joints ) ) {
+								$large_joint_affected ++;
+							} else {
+								$small_joint_affected ++;
+							}
 						}
 					}
 				} else {
@@ -72,17 +79,16 @@ class RAFormProcessor {
 				}
 			}
 			//calculate joint score for skeleton
-			if($small_joint_affected>10){
+			if($small_joint_affected>0 && ($small_joint_affected + $large_joint_affected) >10){
 				$score+=5;
 				$joint_score+=5;
-			} elseif($small_joint_affected>3){
+			} elseif($small_joint_affected>0 && ($small_joint_affected + $large_joint_affected) >3){
 				$score+=3;
 				$joint_score+=3;
-			} elseif($small_joint_affected>0){
-				$score+=2;
-				$joint_score+=2;
-			}
-			if($large_joint_affected>1){
+			} elseif($small_joint_affected>0 && ($small_joint_affected + $large_joint_affected) >0) {
+				$score += 2;
+				$joint_score += 2;
+			} elseif($large_joint_affected>1){
 				$score+=1;
 				$joint_score+=1;
 			}

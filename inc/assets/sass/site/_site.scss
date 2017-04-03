@@ -61,6 +61,9 @@
         &.active-3 {
           background-color: $color-red;
         }
+        &.non-click {
+          background-color: black;
+        }
       }
     }
   }
@@ -140,6 +143,10 @@ ul.tabs {
   &:hover {
     background-color: #333;
   }
+  &.non-click {
+    background-color: black;
+
+  }
   &.box-open {
     z-index: 2;
   }
@@ -164,10 +171,10 @@ ul.tabs {
       text-align: center;
       border-radius: 5px;
       padding: 5px;
-      transform: scale(.95);
+      // transform: scale(.95);
       @include transition(all ease .1s);
       &:hover {
-        transform: scale(1);
+        // transform: scale(1);
       }
     }
     .active-1 {
