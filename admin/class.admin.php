@@ -33,7 +33,7 @@ class RAAdmin {
 			$cap,
 			$slug_evaluation,
 			false,
-			plugin_dir_url( RAEVAL__PLUGIN_DIR) . 'ra-evaluation/inc/images/dashicon.png',
+			'dashicons-id',
 			'21'
 		);
 		add_submenu_page(
