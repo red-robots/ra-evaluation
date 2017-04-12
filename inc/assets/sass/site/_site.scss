@@ -139,8 +139,13 @@ ul.tabs {
   background-color: #ccc;
   @include transition(all ease .2s);
   position: relative;
+  cursor: pointer;
+  &:hover {
+    background-color: #333;
+  }
   &.non-click {
     background-color: black;
+
   }
   &.box-open {
     z-index: 2;
@@ -166,6 +171,11 @@ ul.tabs {
       text-align: center;
       border-radius: 5px;
       padding: 5px;
+      transform: scale(.95);
+      @include transition(all ease .1s);
+      &:hover {
+        transform: scale(1);
+      }
     }
     .active-1 {
       background-color: $color-gold;
@@ -231,10 +241,13 @@ ul.tabs {
     }
 }
 .dot-small, .dot-med, .dot-large {
-	transform: scale(.9);
+	// transform: scale(.9);
+  // border: #ccc solid 1px;
 	@include transition(all ease .2s);
+  cursor: pointer;
 	&:hover {
-		transform: scale(1);
+		// transform: scale(1);
+    // border: $color-blue solid 1px;
 	}
 }
 .middle-1 {

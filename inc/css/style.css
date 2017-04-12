@@ -2432,7 +2432,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 14px / 1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -4799,7 +4799,10 @@ ul.tabs {
   background-color: #ccc;
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
+  .ra-node:hover {
+    background-color: #333; }
   .ra-node.non-click {
     background-color: black; }
   .ra-node.box-open {
@@ -4821,7 +4824,9 @@ ul.tabs {
       color: white;
       text-align: center;
       border-radius: 5px;
-      padding: 5px; }
+      padding: 5px;
+      -webkit-transition: all ease 0.1s;
+      transition: all ease 0.1s; }
     .ra-node .ra-selector-box .active-1 {
       background-color: #c0b283; }
     .ra-node .ra-selector-box .active-2 {
@@ -4880,15 +4885,9 @@ ul.tabs {
       height: 6em; } }
 
 .dot-small, .dot-med, .dot-large {
-  -webkit-transform: scale(0.9);
-      -ms-transform: scale(0.9);
-          transform: scale(0.9);
   -webkit-transition: all ease 0.2s;
-  transition: all ease 0.2s; }
-  .dot-small:hover, .dot-med:hover, .dot-large:hover {
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1); }
+  transition: all ease 0.2s;
+  cursor: pointer; }
 
 .middle-1 {
   position: absolute;
