@@ -33,6 +33,7 @@ class RAEval {
 		self::$RAPostType->init();
 		self::$RAAdmin->init();
 		self::$RAFormProcessor->process();
+		self::$RAAdmin->process();
 	}
 }
 

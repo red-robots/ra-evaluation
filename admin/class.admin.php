@@ -47,7 +47,7 @@ class RAAdmin {
 		);
 	}
 	public static function options_page() {
-		require_once( plugin_dir_url(__FILE__). 'options.php' );
+		require_once( plugin_dir_path(__FILE__). 'options.php' );
 	}
 	public static function admin_styles() {
 		wp_enqueue_style( 'jquery-ui-datepicker-style' , 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
@@ -61,5 +61,12 @@ class RAAdmin {
 			'admin' => true
 		));
 	}
-
+	public static function process() {
+		if ( ! isset( $_POST['raeval_options_nonce'] ) || ! wp_verify_nonce( $_POST['raeval_options_nonce'], basename( RAEVAL__PLUGIN_DIR ) ) ) {
+			return;
+		}
+		if(isset($_POST['email'])&&!empty($_POST['email'])){
+			update_option('raeval_email',$_POST['email']);
+		}
+	}
 }
