@@ -39,7 +39,7 @@ class RAAdmin {
 		add_submenu_page(
 			$slug_evaluation,
 			__('Subpage, options','raeval'),
-			__('Subpage, options',
+			__('Options',
 				'raeval'),
 			$cap,
 			'evalutation-options',
