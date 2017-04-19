@@ -125,10 +125,20 @@ class RAFormProcessor {
 			}
 			//dob save
 			if(isset($_POST['dob'])){
-				add_post_meta( $id, 'raeval_dob', (new DateTime(sanitize_text_field( $_POST['dob'] )))->format('m/d/Y'), true );
+				try{
+					$dob = (new DateTime(sanitize_text_field( $_POST['dob'] )))->format('m/d/Y');
+				} catch(Exception $e) {
+					$dob = "unknown";
+				}
+				add_post_meta( $id, 'raeval_dob', $dob, true );
 			}
 			//date save now
-			add_post_meta($id,'raeval_date',(new DateTime())->format('m/d/Y'),true);
+			try{
+				$now = (new DateTime())->format('m/d/Y');
+			} catch(Exception $e) {
+				$now = "unknown";
+			}
+			add_post_meta($id,'raeval_date',$now,true);
 			//skeleton save
 			add_post_meta($id,'raeval_skeleton',json_encode($values),true);
 			//score save

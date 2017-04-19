@@ -230,6 +230,10 @@ ul.tabs {
       width: 3.5em;
       height: 3.5em;
     }
+  @media screen and (min-width: $widewidth) {
+    width: 4.5em;
+    height: 4.5em;
+  }
 }
 .dot-med {
   /*width: 2em;
@@ -261,6 +265,10 @@ ul.tabs {
       width: 4em;
       height: 4em;
     }
+  @media screen and (min-width: $widewidth) {
+    width: 5em;
+    height: 5em;
+  }
 }
 .dot-large {
    width: 1.5em;
@@ -277,6 +285,10 @@ ul.tabs {
     	width: 5em;
     	height: 5em;
     }
+  @media screen and (min-width: $widewidth) {
+    width: 6em;
+    height: 6em;
+  }
 }
 .dot-small, .dot-med, .dot-large {
 	// transform: scale(.9);

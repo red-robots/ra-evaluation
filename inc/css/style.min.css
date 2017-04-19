@@ -1279,14 +1279,17 @@ ul.tabs a.active{background:#fff;color:#ec4e4e}
 .dot-small{width:1.5em;height:1.5em}
 @media screen and (min-width:600px){.dot-small{width:2em;height:2em}
 }@media screen and (min-width:1200px){.dot-small{width:3.5em;height:3.5em}
+}@media screen and (min-width:1500px){.dot-small{width:4.5em;height:4.5em}
 }.dot-med{width:1.5em;height:1.5em}
 @media screen and (min-width:600px){.dot-med{width:2em;height:2em}
 }@media screen and (min-width:900px){.dot-med{width:2.5em;height:2.5em}
 }@media screen and (min-width:1200px){.dot-med{width:4em;height:4em}
+}@media screen and (min-width:1500px){.dot-med{width:5em;height:5em}
 }.dot-large{width:1.5em;height:1.5em}
 @media screen and (min-width:600px){.dot-large{width:2em;height:2em}
 }@media screen and (min-width:900px){.dot-large{width:3em;height:3em}
 }@media screen and (min-width:1200px){.dot-large{width:5em;height:5em}
+}@media screen and (min-width:1500px){.dot-large{width:6em;height:6em}
 }.dot-small,.dot-med,.dot-large{-webkit-transition:all ease .2s;transition:all ease .2s;cursor:pointer}
 .middle-1{position:absolute;border-radius:50%;left:47.3%;top:14%}
 .post-type-evaluation #minor-publishing{display:none}

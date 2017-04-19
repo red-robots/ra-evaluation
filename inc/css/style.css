@@ -4878,6 +4878,10 @@ ul.tabs {
     .dot-small {
       width: 3.5em;
       height: 3.5em; } }
+  @media screen and (min-width: 1500px) {
+    .dot-small {
+      width: 4.5em;
+      height: 4.5em; } }
 
 .dot-med {
   /*width: 2em;
@@ -4908,6 +4912,10 @@ ul.tabs {
     .dot-med {
       width: 4em;
       height: 4em; } }
+  @media screen and (min-width: 1500px) {
+    .dot-med {
+      width: 5em;
+      height: 5em; } }
 
 .dot-large {
   width: 1.5em;
@@ -4924,6 +4932,10 @@ ul.tabs {
     .dot-large {
       width: 5em;
       height: 5em; } }
+  @media screen and (min-width: 1500px) {
+    .dot-large {
+      width: 6em;
+      height: 6em; } }
 
 .dot-small, .dot-med, .dot-large {
   -webkit-transition: all ease 0.2s;
