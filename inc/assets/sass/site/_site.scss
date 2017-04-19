@@ -1,12 +1,41 @@
+.skeleton-key {
+  width: 250px;
+  .line {
+    margin: 0 0 10px 0;
+    .box {
+      width: 25px;
+      height: 25px;
+      border-radius: 5px;
+      margin-right: 5px;
+      display: inline-block;
+      vertical-align: middle;
+      &.active-1 {
+        background-color: $color-gold;
+      }
+      &.active-2 {
+        background-color: orange;
+      }
+      &.active-3 {
+        background-color: $color-red;
+      }
+      &.non-click {
+        background-color: black;
+      }
+    }
+  }
+}
 .skeleton {
-	width: 400px;
-	height: 439px;
+	//width: 400px;
+	//height: 439px;
+  width: 100%;
+  padding-bottom: 1463/1000*100%;
+  margin-bottom: 52px;
 	position: relative;
 	background: {
 		image: url(../images/skeleton.png);
 		size: cover;
 	}
-	@media screen and (min-width: $tabwidth) {
+	/*@media screen and (min-width: $tabwidth) {
 		width: 550px;
 		height: 805px;
 	}
@@ -17,7 +46,7 @@
 	@media screen and (min-width: $deskwidth) {
 		width: 1000px;
 		height: 1463px;
-	}
+	}*/
 	.active {
 		background-color: #f00;
 	}
@@ -31,42 +60,21 @@
 		border: 0;
 		text-shadow: rgba(0,0,0,0);
 		width: auto;
-		position: fixed;
-		top: 10px;
+		position: absolute;
+        bottom: -52px;
 		right: 10px;
 
+      @media screen and (min-width: $midwidth) {
+        top: 0;
+        bottom: auto;
+      }
 		&:hover {
 			background-color: $color-blue;
 			box-shadow: none;
 			text-shadow: rgba(0,0,0,0);
 		}
 	}
-  .key {
-    width: 250px;
-    .line {
-      margin: 0 0 10px 0;
-      .box {
-        width: 25px;
-        height: 25px;
-        border-radius: 5px;
-        margin-right: 5px;
-        display: inline-block;
-        vertical-align: middle;
-        &.active-1 {
-          background-color: $color-gold;
-        }
-        &.active-2 {
-          background-color: orange;
-        }
-        &.active-3 {
-          background-color: $color-red;
-        }
-        &.non-click {
-          background-color: black;
-        }
-      }
-    }
-  }
+
 }
 .ra-eval {
 	padding: 5%;
@@ -162,9 +170,13 @@ ul.tabs {
   .ra-selector-box {
     position: absolute;
     top: 0;
-    left: -250px;
-    width: 250px;
+    left: -75px;
+    width: 150px;
     z-index: 5;
+    @media screen and (min-width: $midwidth) {
+      left: -250px;
+      width: 250px;
+    }
     .box {
       margin-bottom: 10px;
       color: white;
@@ -193,7 +205,7 @@ ul.tabs {
 }
 
 .dot-small {
-	width: 1.5em;
+    /*width: 1.5em;
     height: 1.5em;
     @media screen and (min-width: $tabwidth) {
     	width: 2.5em;
@@ -206,10 +218,21 @@ ul.tabs {
     @media screen and (min-width: $deskwidth) {
     	width: 3.5em;
     	height: 3.5em;
+    }*/
+
+    width: 1.5em;
+    height: 1.5em;
+    @media screen and (min-width: $tabwidth) {
+      width: 2em;
+      height: 2em;
+    }
+    @media screen and (min-width: $deskwidth) {
+      width: 3.5em;
+      height: 3.5em;
     }
 }
 .dot-med {
-	width: 2em;
+  /*width: 2em;
     height: 2em;
     @media screen and (min-width: $tabwidth) {
     	width: 3em;
@@ -222,22 +245,37 @@ ul.tabs {
     @media screen and (min-width: $deskwidth) {
     	width: 4em;
     	height: 4em;
+    }*/
+
+    width: 1.5em;
+    height: 1.5em;
+    @media screen and (min-width: $tabwidth) {
+      width: 2em;
+      height: 2em;
+    }
+    @media screen and (min-width: $midwidth) {
+      width: 2.5em;
+      height: 2.5em;
+    }
+    @media screen and (min-width: $deskwidth) {
+      width: 4em;
+      height: 4em;
     }
 }
 .dot-large {
-	width: 3em;
-    height: 3em;
+   width: 1.5em;
+    height: 1.5em;
     @media screen and (min-width: $tabwidth) {
-    	width: 4em;
-    	height: 4em;
+    	width: 2em;
+    	height: 2em;
     }
     @media screen and (min-width: $midwidth) {
-    	width: 5em;
-    	height: 5em;
+    	width: 3em;
+    	height: 3em;
     }
     @media screen and (min-width: $deskwidth) {
-    	width: 6em;
-    	height: 6em;
+    	width: 5em;
+    	height: 5em;
     }
 }
 .dot-small, .dot-med, .dot-large {

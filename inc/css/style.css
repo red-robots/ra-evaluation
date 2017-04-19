@@ -2432,7 +2432,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px / 1 FontAwesome;
+  font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -4678,24 +4678,45 @@ button:focus {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.skeleton-key {
+  width: 250px; }
+  .skeleton-key .line {
+    margin: 0 0 10px 0; }
+    .skeleton-key .line .box {
+      width: 25px;
+      height: 25px;
+      border-radius: 5px;
+      margin-right: 5px;
+      display: inline-block;
+      vertical-align: middle; }
+      .skeleton-key .line .box.active-1 {
+        background-color: #c0b283; }
+      .skeleton-key .line .box.active-2 {
+        background-color: orange; }
+      .skeleton-key .line .box.active-3 {
+        background-color: #ec4e4e; }
+      .skeleton-key .line .box.non-click {
+        background-color: black; }
+
 .skeleton {
-  width: 400px;
-  height: 439px;
+  width: 100%;
+  padding-bottom: 146.3%;
+  margin-bottom: 52px;
   position: relative;
   background-image: url(../images/skeleton.png);
-  background-size: cover; }
-  @media screen and (min-width: 600px) {
-    .skeleton {
-      width: 550px;
-      height: 805px; } }
-  @media screen and (min-width: 900px) {
-    .skeleton {
-      width: 850px;
-      height: 1244px; } }
-  @media screen and (min-width: 1200px) {
-    .skeleton {
-      width: 1000px;
-      height: 1463px; } }
+  background-size: cover;
+  /*@media screen and (min-width: $tabwidth) {
+		width: 550px;
+		height: 805px;
+	}
+	@media screen and (min-width: $midwidth) {
+		width: 850px;
+		height: 1244px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 1000px;
+		height: 1463px;
+	}*/ }
   .skeleton .active {
     background-color: #f00; }
   .skeleton .skeleton-submit {
@@ -4709,32 +4730,17 @@ button:focus {
     border: 0;
     text-shadow: transparent;
     width: auto;
-    position: fixed;
-    top: 10px;
+    position: absolute;
+    bottom: -52px;
     right: 10px; }
+    @media screen and (min-width: 900px) {
+      .skeleton .skeleton-submit {
+        top: 0;
+        bottom: auto; } }
     .skeleton .skeleton-submit:hover {
       background-color: #083b66;
       box-shadow: none;
       text-shadow: transparent; }
-  .skeleton .key {
-    width: 250px; }
-    .skeleton .key .line {
-      margin: 0 0 10px 0; }
-      .skeleton .key .line .box {
-        width: 25px;
-        height: 25px;
-        border-radius: 5px;
-        margin-right: 5px;
-        display: inline-block;
-        vertical-align: middle; }
-        .skeleton .key .line .box.active-1 {
-          background-color: #c0b283; }
-        .skeleton .key .line .box.active-2 {
-          background-color: orange; }
-        .skeleton .key .line .box.active-3 {
-          background-color: #ec4e4e; }
-        .skeleton .key .line .box.non-click {
-          background-color: black; }
 
 .ra-eval {
   padding: 5%; }
@@ -4816,17 +4822,28 @@ ul.tabs {
   .ra-node .ra-selector-box {
     position: absolute;
     top: 0;
-    left: -250px;
-    width: 250px;
+    left: -75px;
+    width: 150px;
     z-index: 5; }
+    @media screen and (min-width: 900px) {
+      .ra-node .ra-selector-box {
+        left: -250px;
+        width: 250px; } }
     .ra-node .ra-selector-box .box {
       margin-bottom: 10px;
       color: white;
       text-align: center;
       border-radius: 5px;
       padding: 5px;
+      -webkit-transform: scale(0.95);
+          -ms-transform: scale(0.95);
+              transform: scale(0.95);
       -webkit-transition: all ease 0.1s;
       transition: all ease 0.1s; }
+      .ra-node .ra-selector-box .box:hover {
+        -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+                transform: scale(1); }
     .ra-node .ra-selector-box .active-1 {
       background-color: #c0b283; }
     .ra-node .ra-selector-box .active-2 {
@@ -4837,52 +4854,76 @@ ul.tabs {
       background-color: #ccc; }
 
 .dot-small {
+  /*width: 1.5em;
+    height: 1.5em;
+    @media screen and (min-width: $tabwidth) {
+    	width: 2.5em;
+    	height: 2.5em;
+    }
+    @media screen and (min-width: $midwidth) {
+    	width: 2.5em;
+    	height: 2.5em;
+    }
+    @media screen and (min-width: $deskwidth) {
+    	width: 3.5em;
+    	height: 3.5em;
+    }*/
   width: 1.5em;
   height: 1.5em; }
   @media screen and (min-width: 600px) {
     .dot-small {
-      width: 2.5em;
-      height: 2.5em; } }
-  @media screen and (min-width: 900px) {
-    .dot-small {
-      width: 2.5em;
-      height: 2.5em; } }
+      width: 2em;
+      height: 2em; } }
   @media screen and (min-width: 1200px) {
     .dot-small {
       width: 3.5em;
       height: 3.5em; } }
 
 .dot-med {
-  width: 2em;
-  height: 2em; }
+  /*width: 2em;
+    height: 2em;
+    @media screen and (min-width: $tabwidth) {
+    	width: 3em;
+    	height: 3em;
+    }
+    @media screen and (min-width: $midwidth) {
+    	width: 3em;
+    	height: 3em;
+    }
+    @media screen and (min-width: $deskwidth) {
+    	width: 4em;
+    	height: 4em;
+    }*/
+  width: 1.5em;
+  height: 1.5em; }
   @media screen and (min-width: 600px) {
     .dot-med {
-      width: 3em;
-      height: 3em; } }
+      width: 2em;
+      height: 2em; } }
   @media screen and (min-width: 900px) {
     .dot-med {
-      width: 3em;
-      height: 3em; } }
+      width: 2.5em;
+      height: 2.5em; } }
   @media screen and (min-width: 1200px) {
     .dot-med {
       width: 4em;
       height: 4em; } }
 
 .dot-large {
-  width: 3em;
-  height: 3em; }
+  width: 1.5em;
+  height: 1.5em; }
   @media screen and (min-width: 600px) {
     .dot-large {
-      width: 4em;
-      height: 4em; } }
+      width: 2em;
+      height: 2em; } }
   @media screen and (min-width: 900px) {
+    .dot-large {
+      width: 3em;
+      height: 3em; } }
+  @media screen and (min-width: 1200px) {
     .dot-large {
       width: 5em;
       height: 5em; } }
-  @media screen and (min-width: 1200px) {
-    .dot-large {
-      width: 6em;
-      height: 6em; } }
 
 .dot-small, .dot-med, .dot-large {
   -webkit-transition: all ease 0.2s;
