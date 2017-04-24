@@ -34,6 +34,7 @@ class RAFormProcessor {
 			$large_joints = array(4,5,22,23,24);
 			$non_click_joins = array(18,19,20,21,31);
 			$joint_score = 0;
+			$billateral = false;
 			//save values for skeleton
 			if ( isset( $_POST['middle-1'] ) ) {
 				$val                = preg_match( '/[123]/', sanitize_text_field( $_POST['middle-1'] ) ) === 1 ? sanitize_text_field( $_POST['middle-1'] ) : 0;
@@ -63,6 +64,9 @@ class RAFormProcessor {
 			}
 			for ( $i = 1; $i < 37; $i ++ ) {
 				if ( isset( $_POST[ 'right-' . $i ] ) ) {
+					if ( isset( $_POST[ 'left-' . $i ] ) ) {
+						$billateral = true;
+					}
 					$val                     = preg_match( '/[123]/', sanitize_text_field( $_POST[ 'right-' . $i ] ) ) === 1 ? sanitize_text_field( $_POST[ 'right-' . $i ] ) : 0;
 					$values[ 'right-' . $i ] = $val;
 					if($val>0){
@@ -89,29 +93,34 @@ class RAFormProcessor {
 				$score += 2;
 				$joint_score += 2;
 			} elseif($large_joint_affected>1){
-				$score+=1;
-				$joint_score+=1;
+				if($billateral) {
+					$score += 1.5;
+					$joint_score += 1.5;
+				} else  {
+					$score += 1;
+					$joint_score += 1;
+				}
 			}
 			//save joint score
 			add_post_meta($id,'raeval_joint_score',$joint_score,true);
 			//save value for serology and add to score
 			if ( isset( $_POST[ 'serology' ] ) ) {
 				$serology = sanitize_text_field($_POST['serology']);
-				$val = preg_match( '/[23]/', $serology ) === 1 ? $serology : 0;
+				$val = preg_match( '/^2|3.5$/', $serology ) === 1 ? $serology : 0;
 				$score += $val;
 				add_post_meta($id,'raeval_serology',$val,true);
 			}
 			//save value for duration and add to score
 			if ( isset( $_POST[ 'duration' ] ) ) {
 				$duration = sanitize_text_field($_POST['duration']);
-				$val = preg_match( '/[1]/', $duration ) === 1 ? $duration : 0;
+				$val = preg_match( '/^1$/', $duration ) === 1 ? $duration : 0;
 				$score += $val;
 				add_post_meta($id,'raeval_duration',$val,true);
 			}
 			//save value for apr and add to score
 			if ( isset( $_POST[ 'apr' ] ) ) {
 				$apr = sanitize_text_field($_POST['apr']);
-				$val = preg_match( '/[1]/', $apr ) === 1 ? $apr : 0;
+				$val = preg_match( '/^0.5$/', $apr ) === 1 ? $apr : 0;
 				$score += $val;
 				add_post_meta($id,'raeval_apr',$val,true);
 			}
