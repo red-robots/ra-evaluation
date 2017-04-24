@@ -1278,7 +1278,8 @@ ul.tabs a.active{background:#fff;color:#ec4e4e}
 .ra-node .ra-selector-box .inactive{background-color:#ccc}
 .dot-small{width:1.5em;height:1.5em}
 @media screen and (min-width:600px){.dot-small{width:2em;height:2em}
-}@media screen and (min-width:1200px){.dot-small{width:3em;height:3em}
+}@media screen and (min-width:1200px){.dot-small{width:2.5em;height:2.5em}
+}@media screen and (min-width:1500px){.dot-small{width:3.5em;height:3.5em}
 }.dot-med{width:1.5em;height:1.5em}
 @media screen and (min-width:600px){.dot-med{width:2em;height:2em}
 }@media screen and (min-width:900px){.dot-med{width:2.5em;height:2.5em}

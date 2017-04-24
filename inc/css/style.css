@@ -4862,8 +4862,12 @@ ul.tabs {
       height: 2em; } }
   @media screen and (min-width: 1200px) {
     .dot-small {
-      width: 3em;
-      height: 3em; } }
+      width: 2.5em;
+      height: 2.5em; } }
+  @media screen and (min-width: 1500px) {
+    .dot-small {
+      width: 3.5em;
+      height: 3.5em; } }
 
 .dot-med {
   width: 1.5em;
