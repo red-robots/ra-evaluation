@@ -17,13 +17,15 @@
 </p>
 <p>
     <label>Dob:</label>
+    <br/>
+    Please input date as mm/dd/yyyy
     <br>
-    <input type="text" class="js-datepicker" name="dob" value="">
+    <input type="text" class="" name="dob" value="">
 </p>
 <p>Negative refers to values that are less than or equal to the upper limit of normal for the laboratory and assay.</p>
 <p>Low-positive refers to values that are higher than the upper limit of normal but less than three times the upper limit of normal for the laboratory and assay.</p>
 <p>High-positive refers to values that are more than three times the upper limit of normal for the laboratory and assay.</p>
-<p>When RF information is available is only available as positive or negative, a positive result should be scored as low-positive RF.</p>
+<p>When RF information is only available as positive or negative, a positive result should be scored as low-positive RF.</p>
 <p>
     <label>Serology:</label>
     <br>

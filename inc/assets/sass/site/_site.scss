@@ -205,20 +205,6 @@ ul.tabs {
 }
 
 .dot-small {
-    /*width: 1.5em;
-    height: 1.5em;
-    @media screen and (min-width: $tabwidth) {
-    	width: 2.5em;
-    	height: 2.5em;
-    }
-    @media screen and (min-width: $midwidth) {
-    	width: 2.5em;
-    	height: 2.5em;
-    }
-    @media screen and (min-width: $deskwidth) {
-    	width: 3.5em;
-    	height: 3.5em;
-    }*/
 
     width: 1.5em;
     height: 1.5em;
@@ -227,29 +213,11 @@ ul.tabs {
       height: 2em;
     }
     @media screen and (min-width: $deskwidth) {
-      width: 3.5em;
-      height: 3.5em;
+      width: 3em;
+      height: 3em;
     }
-  @media screen and (min-width: $widewidth) {
-    width: 4.5em;
-    height: 4.5em;
-  }
 }
 .dot-med {
-  /*width: 2em;
-    height: 2em;
-    @media screen and (min-width: $tabwidth) {
-    	width: 3em;
-    	height: 3em;
-    }
-    @media screen and (min-width: $midwidth) {
-    	width: 3em;
-    	height: 3em;
-    }
-    @media screen and (min-width: $deskwidth) {
-    	width: 4em;
-    	height: 4em;
-    }*/
 
     width: 1.5em;
     height: 1.5em;
@@ -313,21 +281,3 @@ ul.tabs {
 @import "body-left";
 @import "body-right";
 
-.login-form {
-  width: 60%;
-  padding: 2%;
-  margin: 10% auto;
-  background-color: white;
-  text-align: center;
-  box-shadow: 0 0 25px lightgrey;
-  border-radius: 10px;
-  form {
-    label {
-      display: block;
-
-    }
-    input {
-      max-width: 100%;
-    }
-  }
-}

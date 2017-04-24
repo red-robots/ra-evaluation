@@ -32,7 +32,7 @@ class RAFormProcessor {
 			$large_joint_affected = 0;
 			$small_joint_affected = 0;
 			$large_joints = array(4,5,22,23,24);
-			$non_click_joins = array(7,18,19,20,21,31);
+			$non_click_joins = array(18,19,20,21,31);
 			$joint_score = 0;
 			//save values for skeleton
 			if ( isset( $_POST['middle-1'] ) ) {
