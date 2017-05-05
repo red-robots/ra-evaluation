@@ -19,6 +19,13 @@ class RAPostType {
 				'type' => 'text'
 			),
 			array(
+				'label' => 'Primary Care Physician Phone',
+				'desc' => 'Please fill in the phon of the pcp.',
+				'id' => self::$prefix.'phone',
+				'class' => 'phone',
+				'type' => 'text'
+			),
+			array(
 				'label' => 'Date of Evaluation',
 				'desc' => 'Click in the field to choose a date.',
 				'id' => self::$prefix.'date',

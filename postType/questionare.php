@@ -6,9 +6,14 @@
  * Time: 2:31 PM
  */?>
 <p>
-	<label>Primary Care Physician:</label>
-	<br>
-	<input type="text" name="pcp" value="">
+    <label>Primary Care Physician:</label>
+    <br>
+    <input type="text" name="pcp" value="">
+</p>
+<p>
+    <label>Direct Contact Phone #:</label>
+    <br>
+    <input type="text" name="phone" value="">
 </p>
 <p>
     <label>Initials:</label>

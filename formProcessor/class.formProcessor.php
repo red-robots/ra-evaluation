@@ -128,6 +128,10 @@ class RAFormProcessor {
 			if ( isset( $_POST['pcp'] ) ) {
 				add_post_meta( $id, 'raeval_pcp', sanitize_text_field( $_POST['pcp'] ), true );
 			}
+			//phone save
+			if ( isset( $_POST['phone'] ) ) {
+				add_post_meta( $id, 'raeval_phone', sanitize_text_field( $_POST['phone'] ), true );
+			}
 			//initials save
 			if ( isset( $_POST['initials'] ) ) {
 				add_post_meta( $id, 'raeval_initials', sanitize_text_field( $_POST['initials'] ), true );
@@ -169,16 +173,17 @@ class RAFormProcessor {
 			add_filter( 'wp_mail_from_name', 'raeval_filter_wp_mail_from_name', 10, 1 );
 
 			$message = "Hello,\r\n\r\n";
-			$message .= "The following information has been received for patient ".$uniqid."\r\n";
-			$message .= "Primary Care Physician " . get_post_meta($id,'raeval_pcp',true)."\r\n";
-			$message .= "Date of evaluation " . get_post_meta($id,'raeval_date',true)."\r\n";
-			$message .= "Initials " . get_post_meta($id,'raeval_initials',true)."\r\n";
-			$message .= "DOB " . get_post_meta($id,'raeval_dob',true)."\r\n";
-			$message .= "Joint Score " . get_post_meta($id,'raeval_joint_score',true)."\r\n";
-			$message .= "Serology " . get_post_meta($id,'raeval_serology',true)."\r\n";
-			$message .= "Duration of Symptoms " . get_post_meta($id,'raeval_duration',true)."\r\n";
-			$message .= "Acute Phase Reactants " . get_post_meta($id,'raeval_apr',true)."\r\n";
-			$message .= "Patient overall score " . get_post_meta($id,'raeval_score',true)."\r\n\r\n";
+			$message .= "The following information has been received for patient: ".$uniqid."\r\n";
+			$message .= "Primary Care Physician: " . get_post_meta($id,'raeval_pcp',true)."\r\n";
+			$message .= "Primary Care Physician Phone: " . get_post_meta($id,'raeval_phone',true)."\r\n";
+			$message .= "Date of evaluation: " . get_post_meta($id,'raeval_date',true)."\r\n";
+			$message .= "Initials: " . get_post_meta($id,'raeval_initials',true)."\r\n";
+			$message .= "DOB: " . get_post_meta($id,'raeval_dob',true)."\r\n";
+			$message .= "Joint Score: " . get_post_meta($id,'raeval_joint_score',true)."\r\n";
+			$message .= "Serology: " . get_post_meta($id,'raeval_serology',true)."\r\n";
+			$message .= "Duration of Symptoms: " . get_post_meta($id,'raeval_duration',true)."\r\n";
+			$message .= "Acute Phase Reactants: " . get_post_meta($id,'raeval_apr',true)."\r\n";
+			$message .= "Patient overall score: " . get_post_meta($id,'raeval_score',true)."\r\n\r\n";
 			$message .= "Please login to see patient skeleton.";
 
 			wp_mail( $emails, sprintf( __( 'Results [%s]'), $uniqid), $message );
