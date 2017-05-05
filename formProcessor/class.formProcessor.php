@@ -163,32 +163,38 @@ class RAFormProcessor {
 
 			//send results to registered emails
 			$emails = get_option('raeval_email');
-			function raeval_filter_wp_mail_from( $from_email ) {
-				return 'results@raeval.com';
-			};
-			add_filter( 'wp_mail_from', 'raeval_filter_wp_mail_from', 10, 1 );
-			function raeval_filter_wp_mail_from_name( $from_email_name ) {
-				return "RAEval App";
-			};
-			add_filter( 'wp_mail_from_name', 'raeval_filter_wp_mail_from_name', 10, 1 );
+			if(strcmp($emails,"None")!==0) {
+				function raeval_filter_wp_mail_from( $from_email ) {
+					return 'results@raeval.com';
+				}
 
-			$message = "Hello,\r\n\r\n";
-			$message .= "The following information has been received for patient: ".$uniqid."\r\n";
-			$message .= "Primary Care Physician: " . get_post_meta($id,'raeval_pcp',true)."\r\n";
-			$message .= "Primary Care Physician Phone: " . get_post_meta($id,'raeval_phone',true)."\r\n";
-			$message .= "Date of evaluation: " . get_post_meta($id,'raeval_date',true)."\r\n";
-			$message .= "Initials: " . get_post_meta($id,'raeval_initials',true)."\r\n";
-			$message .= "DOB: " . get_post_meta($id,'raeval_dob',true)."\r\n";
-			$message .= "Joint Score: " . get_post_meta($id,'raeval_joint_score',true)."\r\n";
-			$message .= "Serology: " . get_post_meta($id,'raeval_serology',true)."\r\n";
-			$message .= "Duration of Symptoms: " . get_post_meta($id,'raeval_duration',true)."\r\n";
-			$message .= "Acute Phase Reactants: " . get_post_meta($id,'raeval_apr',true)."\r\n";
-			$message .= "Patient overall score: " . get_post_meta($id,'raeval_score',true)."\r\n\r\n";
-			$message .= "Please login to see patient skeleton.";
+				;
+				add_filter( 'wp_mail_from', 'raeval_filter_wp_mail_from', 10, 1 );
+				function raeval_filter_wp_mail_from_name( $from_email_name ) {
+					return "RAEval App";
+				}
 
-			wp_mail( $emails, sprintf( __( 'Results [%s]'), $uniqid), $message );
-			remove_filter( 'wp_mail_from', 'raeval_filter_wp_mail_from', 10);
-			remove_filter( 'wp_mail_from_name', 'raeval_filter_wp_mail_from_name', 10 );
+				;
+				add_filter( 'wp_mail_from_name', 'raeval_filter_wp_mail_from_name', 10, 1 );
+
+				$message = "Hello,\r\n\r\n";
+				$message .= "The following information has been received for patient: " . $uniqid . "\r\n";
+				$message .= "Primary Care Physician: " . get_post_meta( $id, 'raeval_pcp', true ) . "\r\n";
+				$message .= "Primary Care Physician Phone: " . get_post_meta( $id, 'raeval_phone', true ) . "\r\n";
+				$message .= "Date of evaluation: " . get_post_meta( $id, 'raeval_date', true ) . "\r\n";
+				$message .= "Initials: " . get_post_meta( $id, 'raeval_initials', true ) . "\r\n";
+				$message .= "DOB: " . get_post_meta( $id, 'raeval_dob', true ) . "\r\n";
+				$message .= "Joint Score: " . get_post_meta( $id, 'raeval_joint_score', true ) . "\r\n";
+				$message .= "Serology: " . get_post_meta( $id, 'raeval_serology', true ) . "\r\n";
+				$message .= "Duration of Symptoms: " . get_post_meta( $id, 'raeval_duration', true ) . "\r\n";
+				$message .= "Acute Phase Reactants: " . get_post_meta( $id, 'raeval_apr', true ) . "\r\n";
+				$message .= "Patient overall score: " . get_post_meta( $id, 'raeval_score', true ) . "\r\n\r\n";
+				$message .= "Please login to see patient skeleton.";
+
+				wp_mail( $emails, sprintf( __( 'Results [%s]' ), $uniqid ), $message );
+				remove_filter( 'wp_mail_from', 'raeval_filter_wp_mail_from', 10 );
+				remove_filter( 'wp_mail_from_name', 'raeval_filter_wp_mail_from_name', 10 );
+			}
 		}
 	}
 }

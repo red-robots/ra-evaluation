@@ -67,6 +67,8 @@ class RAAdmin {
 		}
 		if(isset($_POST['email'])&&!empty($_POST['email'])){
 			update_option('raeval_email',$_POST['email']);
+		} else {
+			update_option('raeval_email',"None");
 		}
 	}
 }
