@@ -8,7 +8,7 @@
 
 <!-- left Hand -->
 <div class="left-6 dot-large ra-node <?php if($values && $values['left-6']) echo "active-".$values['left-6'];?>"></div>
-<div class="left-7 dot-small ra-node <?php if($values && $values['left-7']) echo "active-".$values['left-7'];?>"></div>
+<div class="left-7 dot-small non-click ra-node <?php if($values && $values['left-7']) echo "active-".$values['left-7'];?>"></div>
 <div class="left-8 dot-small ra-node <?php if($values && $values['left-8']) echo "active-".$values['left-8'];?>"></div>
 <div class="left-9 dot-small ra-node <?php if($values && $values['left-9']) echo "active-".$values['left-9'];?>"></div>
 <div class="left-10 dot-small ra-node <?php if($values && $values['left-10']) echo "active-".$values['left-10'];?>"></div>
