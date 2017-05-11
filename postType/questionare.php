@@ -38,7 +38,7 @@
         <option value=""></option>
         <option value="0">RF(-) and anti-CCP(-)</option>
         <option value="2">Low RF(+) or Low anti-CCP(+)</option>
-        <option value="3.5">High RF(+) or High anti-CCP(+)</option>
+        <option value="3">High RF(+) or High anti-CCP(+)</option>
     </select>
 </p>
 <p>
@@ -56,6 +56,6 @@
     <select name="apr">
         <option value=""></option>
         <option value="0">CRP and ESR within normal</option>
-        <option value="0.5">elevated CRP or ESR</option>
+        <option value="1">elevated CRP or ESR</option>
     </select>
 </p>
