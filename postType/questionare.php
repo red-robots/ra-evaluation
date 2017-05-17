@@ -36,6 +36,7 @@
     <br>
     <select name="serology">
         <option value=""></option>
+        <option value="0">Unknown</option>
         <option value="0">RF(-) and anti-CCP(-)</option>
         <option value="2">Low RF(+) or Low anti-CCP(+)</option>
         <option value="3">High RF(+) or High anti-CCP(+)</option>
@@ -55,6 +56,7 @@
     <br>
     <select name="apr">
         <option value=""></option>
+        <option value="0">Unknown</option>
         <option value="0">CRP and ESR within normal</option>
         <option value="1">elevated CRP or ESR</option>
     </select>
