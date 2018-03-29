@@ -61,3 +61,8 @@
         <option value="1">elevated CRP or ESR</option>
     </select>
 </p>
+<p>
+    <label>Image: (.jpg or .png only, max 2MB)</label>
+    <br>
+    <input type="file" name="image">
+</p>

@@ -7,7 +7,7 @@
  */
 
 class RAPostType {
-	private static $custom_meta_fields, $prefix, $custom_meta_fields_static;
+	private static $custom_meta_fields, $custom_image, $prefix, $custom_meta_fields_static;
 	public static function init() {
 		self::$prefix = 'raeval_';
 		self::$custom_meta_fields_static = array(
@@ -91,6 +91,7 @@ class RAPostType {
 		);
 		self::$custom_meta_fields = array(
 		);
+		self::$custom_image = 'image';
 		add_action( 'save_post', array( 'RAPostType', 'save_custom_meta' ) );
 		add_action( 'add_meta_boxes', array( 'RAPostType', 'add_custom_meta_box' ) );
 		add_action( 'edit_form_after_title', array( 'RAPostType', 'move_deck' ) );
@@ -169,6 +170,10 @@ class RAPostType {
 		ob_start();
 		require_once(RAEVAL__PLUGIN_DIR.'inc/skeleton/skeleton.php');
 		echo ob_get_clean();
+		$image_id = get_post_meta($post->ID, self::$custom_image, true);
+		if($image_id){
+			echo '<img class="patient" src="'.wp_get_attachment_url($image_id).'">';
+		}
 	}
 
 	public static function save_custom_meta($post_id) {
@@ -215,7 +220,7 @@ class RAPostType {
 		ob_start();
 
 		if(!isset($_POST['raeval_nonce'])) {
-			echo '<form action="" method="POST">';
+			echo '<form action="" method="POST" enctype="multipart/form-data">';
 			echo '<div class="ra-eval">';
 			echo '<ul class="tabs"><li><a href="#tab1">Step 1</a></li><li><a href="#tab2">Step 2</a></li></ul>';
 			echo '<div id="tab1" class="tab-content">';

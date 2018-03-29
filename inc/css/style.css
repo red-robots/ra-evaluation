@@ -4698,6 +4698,9 @@ button:focus {
       .skeleton-key .line .box.non-click {
         background-color: black; }
 
+img.patient {
+  max-width: 100%; }
+
 .skeleton {
   width: 100%;
   padding-bottom: 146.3%;

@@ -149,7 +149,69 @@ class RAFormProcessor {
 			add_post_meta($id,'raeval_score',$score,true);
 			//unique id save
 			add_post_meta($id,'raeval_uniqid',$uniqid,true);
+			
+			//save uploaded image
+			$uploads = wp_upload_dir();
+			$upload_file_url = array();
+			$mime = array('image/jpeg','image/png');
+			if(isset($_FILES['image'])){
+				$errors_founds = false;
+				$err = '';
 
+				if ($_FILES['image']['error'] != 0){
+					$errors_founds = true;
+					$err .= 'error';
+				}
+
+				if (!in_array($_FILES['image']['type'], $mime)){
+					$errors_founds = true;
+					$err .= 'mime';
+				}
+
+				if ($_FILES['image']['size'] == 0){
+					$errors_founds = true;
+					$err .= 'size 0';
+				}
+
+				if ($_FILES['image']['size'] > 1048576*2){
+					$errors_founds = true;
+					$err .= 'size 2000';
+				}
+
+				if(!is_uploaded_file($_FILES['image']['tmp_name'])){
+					$errors_founds = true;
+					$err .= '!is uploaded file';
+				}
+
+				if ($errors_founds === false){
+					//Sanitize the filename (See note below)
+					$remove_these = array(' ','`','"','\'','\\','/');
+					$newname = str_replace($remove_these,'', $_FILES['image']['name']);
+					//Make the filename unique
+					$newname = time().'-'.$newname;
+					//Save the uploaded the file to another location
+
+					$upload_path = $uploads['path'] . "/$newname";
+					if(move_uploaded_file($_FILES['image']['tmp_name'], $upload_path)){
+						$wp_filetype = wp_check_filetype(basename($upload_path), null );
+						$attachment = array(
+											'post_mime_type' => $wp_filetype['type'],
+											'post_title' => preg_replace('/\.[^.]+$/', '', basename($upload_path)),
+											'post_content' => '',
+											'post_status' => 'inherit'
+											);
+						$attach_id = wp_insert_attachment( $attachment, $upload_path);
+						// you must first include the image.php file
+						// for the function wp_generate_attachment_metadata() to work
+						if ( ! function_exists( 'wp_crop_image' ) ) {
+							include( ABSPATH . 'wp-admin/includes/image.php' );
+						}
+						$attach_data = wp_generate_attachment_metadata( $attach_id, $upload_path );
+						wp_update_attachment_metadata( $attach_id, $attach_data );
+						add_post_meta($id,'image',$attach_id,true);
+					}
+				}
+			} 
 
 
 			//send results to registered emails
