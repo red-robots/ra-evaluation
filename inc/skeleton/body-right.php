@@ -6,6 +6,9 @@
 <div class="right-4 dot-med ra-node <?php if($values && $values['right-4']) echo "active-".$values['right-4'];?>"></div>
 <div class="right-5 dot-large ra-node <?php if($values && $values['right-5']) echo "active-".$values['right-5'];?>"></div>
 
+<div class="label shoulder-left">Shoulder</div>
+<div class="label shoulder-right">Shoulder</div>
+
 <!-- right Hand -->
 <div class="right-6 dot-large ra-node <?php if($values && $values['right-6']) echo "active-".$values['right-6'];?>"></div>
 <div class="right-7 dot-small non-click ra-node <?php if($values && $values['right-7']) echo "active-".$values['right-7'];?>"></div>
@@ -23,6 +26,26 @@
 <div class="right-19 dot-small non-click ra-node <?php if($values && $values['right-19']) echo "active-".$values['right-19'];?>"></div>
 <div class="right-20 dot-small non-click ra-node <?php if($values && $values['right-20']) echo "active-".$values['right-20'];?>"></div>
 <div class="right-21 dot-small non-click ra-node <?php if($values && $values['right-21']) echo "active-".$values['right-21'];?>"></div>
+
+<div class="label elbow-left">Elbow</div>
+<div class="label elbow-right">Elbow</div>
+<div class="label wrist-left">Wrist</div>
+<div class="label wrist-right">Wrist</div>
+<div class="label mcp-left">MCP's</div>
+<div class="label mcp-right">MCP's</div>
+<div class="label pip-left">PIP's</div>
+<div class="label pip-right">PIP's</div>
+<div class="label thumb-left">Thumb IP</div>
+<div class="label thumb-right">Thumb IP</div>
+
+
+<div class="label knees">Knees</div>
+
+<div class="label ankle-left">Ankle</div>
+<div class="label ankle-right">Ankle</div>
+
+<div class="label mtp-left">MTP's</div>
+<div class="label mtp-right">MTP's</div>
 
 <!-- right Leg -->
 <div class="right-22 dot-large ra-node <?php if($values && $values['right-22']) echo "active-".$values['right-22'];?>"></div>

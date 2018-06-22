@@ -4,11 +4,21 @@ if($values){
 	$values = json_decode($values,true);
 }
 ?>
-<div class="skeleton-key">
-    <div class="line"><div class="box active-1"></div> Tender</div>
-    <div class="line"><div class="box active-2"></div> Swollen</div>
-    <div class="line"><div class="box active-3"></div> Tender & Swollen</div>
-    <div class="line"><div class="box non-click"></div> Not Selectable</div>
+<div class="key-legend">
+	<div class="skeleton-key">
+		<h2>Pain Key</h2>
+	    <div class="line"><div class="box active-1"></div> Tender</div>
+	    <div class="line"><div class="box active-2"></div> Swollen</div>
+	    <div class="line"><div class="box active-3"></div> Tender & Swollen</div>
+	    <div class="line"><div class="box non-click"></div> Not Selectable</div>
+	</div>
+	<div class="skeleton-key">
+		<h2>Joint Key</h2>
+		<div class="line">MCP: Metacarpophalangeal Joint</div>
+		<div class="line">PIP: Proximal Interphalangeal Joint</div>
+		<div class="line">IP: Interphalangeal Joint</div>
+		<div class="line">MTP: Metatarsophalangeal Joint</div>
+	</div>
 </div>
 <div class="skeleton">
 
