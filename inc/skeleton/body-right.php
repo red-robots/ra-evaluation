@@ -2,7 +2,7 @@
 <!-- Head -->
 <div class="right-1 dot-small ra-node <?php if($values && $values['right-1']) echo "active-".$values['right-1'];?>"></div>
 <div class="right-2 dot-small ra-node <?php if($values && $values['right-2']) echo "active-".$values['right-2'];?>"></div>
-<div class="right-3 dot-small ra-node <?php if($values && $values['right-3']) echo "active-".$values['right-3'];?>"></div>
+<div class="right-3 dot-small non-click ra-node <?php if($values && $values['right-3']) echo "active-".$values['right-3'];?>"></div>
 <div class="right-4 dot-med ra-node <?php if($values && $values['right-4']) echo "active-".$values['right-4'];?>"></div>
 <div class="right-5 dot-large ra-node <?php if($values && $values['right-5']) echo "active-".$values['right-5'];?>"></div>
 
