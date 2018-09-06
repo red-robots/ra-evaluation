@@ -123,6 +123,10 @@ class RAFormProcessor {
 			if ( isset( $_POST['phone'] ) ) {
 				add_post_meta( $id, 'raeval_phone', sanitize_text_field( $_POST['phone'] ), true );
 			}
+			//email save
+			if ( isset( $_POST['email'] ) ) {
+				add_post_meta( $id, 'raeval_email', sanitize_text_field( $_POST['email'] ), true );
+			}
 			//initials save
 			if ( isset( $_POST['initials'] ) ) {
 				add_post_meta( $id, 'raeval_initials', sanitize_text_field( $_POST['initials'] ), true );
