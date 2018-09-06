@@ -11,6 +11,11 @@
     <input type="text" name="pcp" value="">
 </p>
 <p>
+    <label>Email address:</label>
+    <br>
+    <input type="email" name="email" value="" required>
+</p>
+<p>
     <label>Direct Contact Phone #:</label>
     <br>
     <input type="text" name="phone" value="">
