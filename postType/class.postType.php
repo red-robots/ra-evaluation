@@ -19,6 +19,13 @@ class RAPostType {
 				'type' => 'text'
 			),
 			array(
+				'label' => 'Primary Care Physician Email',
+				'desc' => 'Please fill in the email of the pcp.',
+				'id' => self::$prefix.'email',
+				'class' => 'email',
+				'type' => 'text'
+			),
+			array(
 				'label' => 'Primary Care Physician Phone',
 				'desc' => 'Please fill in the phon of the pcp.',
 				'id' => self::$prefix.'phone',
